@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTra() {
+        let dem = 0;
+        let i = 0;
+        for (i; i < kichThuoc; i++) {
+            mang[i] = prompt('Nhập phần tử thứ ' + i);
+            if (kiTu === mang[i]) {
+                dem++;
+            }
+        }
+        if (dem === 0) {
+            return -1;
+        } else {
+            return 'Kí tự ' + kiTu + ' xuất hiện ' + dem + ' lần trong mảng';
+        }
+    }
+
+    let kichThuoc = prompt('Nhập kích thước mảng:');
+    let mang = [];
+    let kiTu = prompt('Nhập kí tự:');
+    document.write(kiemTra());
+</script>
+</body>
+</html>

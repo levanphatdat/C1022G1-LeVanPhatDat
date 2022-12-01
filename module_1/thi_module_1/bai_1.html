@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = prompt('Nhập số phần tử của mảng');
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt('Nhập phần tử thứ ' + i);
+    }
+    document.write('Mảng vừa nhập là: ' + arr + '<br>');
+    if (arr.length > 50) {
+        document.write('Số phần tử là ' + arr.length + ' phần tử vượt quá 50 phần tử.' + '<br>')
+    } else {
+        document.write('Số phần tử là ' + arr.length + ' phần tử.' + '<br>')
+    }
+    let sumOf3 = 0;
+    let dem = 0;
+    let avgSumOf3;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 3 === 0) {
+            sumOf3 += arr[i];
+            dem++;
+        }
+    }
+    avgSumOf3 = sumOf3 / dem;
+    document.write('Trung bình cộng của các số chia hết cho 3 trong mảng là: ' + avgSumOf3);
+</script>
+</body>
+</html>

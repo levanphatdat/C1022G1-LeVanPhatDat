@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soNguyen(x, y, z) {
+        if (x > y) {
+            if (y > z)
+                return z;
+            return y;
+        }
+        if (x > z) return z;
+        return x;
+    }
+
+    let a = +prompt('');
+    let b = +prompt('');
+    let c = +prompt('');
+    document.write('Số nguyên có giá trị nhỏ nhất là ' + soNguyen(a, b, c));
+</script>
+</body>
+</html>

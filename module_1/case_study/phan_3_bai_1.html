@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function prefixSums(a) {
+        let b = [];
+        let sum = 0;
+        for (let i = 0; i < n; i++) {
+            sum += a[i];
+            b.push(sum);
+        }
+        return console.log(b);
+    }
+
+    let a = [];
+    let n = prompt('Nhập độ dài mảng a');
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt('Nhập phần tử thứ ' + i);
+    }
+    prefixSums(a)
+</script>
+</body>
+</html>

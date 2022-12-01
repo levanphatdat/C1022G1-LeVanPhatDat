@@ -1,0 +1,10 @@
+begin
+input n , a1,a2,...an
+max=a1, i=2
+while i<n
+{max<ai
+then max=ai
+i=i+1}
+output max
+end
+

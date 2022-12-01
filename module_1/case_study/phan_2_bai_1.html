@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính thuế và lương ròng</h1>
+<label>Nhập lương (trVnD):</label>
+<br> <br>
+<input type="text" oninput="luong()" id="luong" placeholder="0 trVND"><br>
+<p>Thuế là: </p>
+<textarea id="thue" cols="20" rows="1" placeholder="0 trVND"></textarea>
+<p>Lương là:</p>
+<textarea id="luongRong" cols="20" rows="1" placeholder="0 trVND"></textarea>
+
+<script>
+    function luong() {
+        let luong = document.getElementById('luong').value;
+        let luongRong = 0;
+        let thue = 0;
+        if (luong < 7) {
+            thue = luong * 0.05;
+            luongRong = luong - thue;
+        } else if (luong < 15) {
+            thue = luong * 0.1;
+            luongRong = luong - thue;
+        } else {
+            thue = luong * 0.2;
+            luongRong = luong - thue;
+        }
+        document.getElementById('thue').innerHTML = thue + ' trVND';
+        document.getElementById('luongRong').innerHTML = luongRong + ' trVND';
+    }
+</script>
+</body>
+</html>

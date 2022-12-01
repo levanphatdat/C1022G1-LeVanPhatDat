@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="bai3"></div>
+<script>
+    let a = [];
+    let max = 0;
+    let sum = 0;
+    let n = prompt('So phan tu cua mang:')
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt('nhap so thu ' + i);
+        if (max < a[i]) {
+            max = a[i]
+        }
+        sum += +a[i]
+    }
+    document.getElementById('bai3').innerHTML = 'gia tri lon nhat la ' + max + '. Gia tri trung binh la ' + sum / n;
+</script>
+</body>
+</html>

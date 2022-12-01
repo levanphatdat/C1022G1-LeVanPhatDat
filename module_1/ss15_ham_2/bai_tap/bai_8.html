@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function daoMang() {
+        let arr1 = [];
+        for (let j = arr.length - 1; j >= 0; j--) {
+            arr1.push(arr[j]);
+        }
+        // for (let j = 0; j < n; j++) {
+        //     arr1[j] = arr[n - 1 - j]
+        // }
+        return arr1;
+    }
+
+    let n = prompt('Nhập độ dài mảng');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    document.write(daoMang());
+</script>
+</body>
+</html>

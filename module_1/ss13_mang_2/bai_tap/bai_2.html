@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let n = +prompt('Nhập số phần tử của mảng:');
+    for (let i = 0; i < n; i++) {
+        a[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    for (let i = 0; i < a.length; i++) {
+        b[i] = a[a.length - 1 - i];
+    }
+    console.log(b);
+
+</script>
+</body>
+</html>

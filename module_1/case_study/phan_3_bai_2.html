@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function missingValue(a, b) {
+        let dem = [];
+        for (let i = 0; i < b.length; i++) {
+            if (a.includes(b[i]) === false) {
+                dem.push(b[i]);
+            }
+        }
+        return console.log(dem);
+    }
+
+    let n = prompt('Độ dài mảng a');
+    let a = [];
+    for (let i = 0; i < n; i++) {
+        a[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    let m = prompt('Độ dài mảng b');
+    let b = [];
+    for (let i = 0; i < m; i++) {
+        b[i] = prompt('Nhập phần tử thứ  ' + i);
+    }
+    missingValue(a, b);
+
+</script>
+</body>
+</html>

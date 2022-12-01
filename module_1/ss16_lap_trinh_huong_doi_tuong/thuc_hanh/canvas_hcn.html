@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Rectangle example</title>
+</head>
+<body>
+<canvas id="DemoCanvas" ></canvas>
+<script>
+    var canvas = document.getElementById("DemoCanvas");
+    if (canvas.getContext)
+    {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle='#fa4b2a';    // color of fill
+        ctx.fillRect(10, 40, 700, 160); // create rectangle
+    }
+    // let ctx = document.getElementById("DemoCanvas").getContext('2d');
+    // ctx.beginPath();
+    // ctx.arc(100,100, 50, 0, 2 * Math.PI);
+    // ctx.stroke(); // fill
+</script>
+</body>
+</html>

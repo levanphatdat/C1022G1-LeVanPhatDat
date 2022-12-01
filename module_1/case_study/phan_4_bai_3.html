@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tìm số lượng kí tự chung</h1>
+<script>
+    function commonCharacterCount(s1, s2) {
+        let mang1 = s1.split('');
+        let mang2 = s2.split('');
+        // let mang3 = [];
+        let viTri = 0;
+        let dem = 0;
+        for (let i = 0; i < mang1.length; i++) {
+            viTri = mang2.indexOf(mang1[i]);
+            if (viTri !== -1) {
+                mang2.splice(viTri, 1);
+                // mang3.push(mang1[i]);
+                dem++;
+            }
+        }
+        return dem;
+    }
+
+    let str1 = prompt('Nhập chuỗi thứ nhất');
+    let str2 = prompt('Nhập chuỗi thứ hai');
+    document.write('Số lượng kí tự chung là ' + commonCharacterCount(str1, str2));
+</script>
+</body>
+</html>

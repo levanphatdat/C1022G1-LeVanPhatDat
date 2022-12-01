@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i = 0;
+    let a = [];
+    let tim;
+    for (i; i < 10; i++) {
+        a[i] = prompt('Nhập số trong chuỗi thứ ' + i);
+    }
+    let v = prompt('Nhập số bạn muốn tìm:');
+    tim = a.indexOf(v);
+    if (tim == -1) {
+        document.write(v + ' is not in the array')
+    } else {
+        document.write(v + ' is in the array')
+    }
+</script>
+</body>
+</html>

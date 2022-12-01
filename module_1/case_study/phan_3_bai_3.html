@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function maxFraction(numerators, denominators) {
+        let max = 0;
+        let index = 0;
+        for (let i = 0; i < numerators.length; i++) {
+            if (numerators[i] / denominators[i] > max) {
+                max = numerators[i] / denominators[i];
+                index = i;
+            }
+        }
+        return console.log(index);
+    }
+
+    let n = prompt('Độ dài mảng numerators và denominators ');
+    let numerators = [];
+    for (let i = 0; i < n; i++) {
+        numerators[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    let denominators = [];
+    for (let i = 0; i < n; i++) {
+        denominators[i] = prompt('Nhập phần tử thứ  ' + i);
+    }
+    maxFraction(numerators, denominators);
+</script>
+</body>
+</html>

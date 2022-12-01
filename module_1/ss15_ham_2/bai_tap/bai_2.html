@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="">Nhập bán kính r:</label>
+<input type="text" id="r" oninput="banKinh()">
+<p>Chu vi là:</p>
+<p id="chuVi"></p>
+<p>Diện tích là:</p>
+<p id="dienTich"></p>
+<script>
+    function banKinh() {
+        let r=+document.getElementById('r').value;
+        result=2*r*3.14;
+        result1=r*r*3.14;
+        document.getElementById('chuVi').innerHTML=result.toFixed(2);
+        document.getElementById('dienTich').innerHTML=result1.toFixed(2);
+    }
+</script>
+</body>
+</html>

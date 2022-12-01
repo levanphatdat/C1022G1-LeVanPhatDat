@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        h1{font-size: 35px;}
+        .a{font-size: 15px;}
+        body {background-color: rgba(255, 230, 0, 0.97)
+        }
+        td.top {vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<h1><font color="blue"><span style="background-color: #00fff7">ĐĂNG KÍ HỌC VIÊN</span></font</h1>
+<form action="link_sever" mothed="post">
+    <div>
+        <label class="a">Họ và tên</label>
+        <input type="text" name="ten">
+    </div>
+    <div>
+        <label class="a">Ngày sinh</label>
+        <input type="text" name="ngaysinh">
+    </div>
+    <div><label class="a">Giới tính</label>
+        <input  type="radio" id="radionam" name="gender">
+                <label class="a" for="radionam">Nam</label>
+            <input  type="radio" id="radionu" name="gender">
+            <label class="a" for="radionu">Nữ</label></div>
+    <div>
+        <table>
+            <tr>
+                <td class="a" class="top">Địa chỉ</td>
+            </tr>
+        </table>
+        &nbsp&nbsp &nbsp &nbsp&nbsp<textarea name="text" id="text" cols="25" rows="5"></textarea><br>
+        <label class="a">Lớp</label>
+        &nbsp &nbsp &nbsp<select name="lop" id="">
+            <option value="">- Chọn lớp -</option>
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        </select>
+    </div>
+    <div>
+        <label class="a">Email</label>
+        &nbsp &nbsp<input type="text" name="email">
+    </div>
+    <div>
+        <label class="a">Điện thoại</label>
+        <input type="text" name="phone">
+    </div>
+    <div>
+        &nbsp &nbsp &nbsp &nbsp &nbsp<input type="submit" value="Đăng ký">
+        <input type="reset" value="Nhập lại">
+    </div>
+
+
+    </form>
+    
+
+
+</body>
+</html>

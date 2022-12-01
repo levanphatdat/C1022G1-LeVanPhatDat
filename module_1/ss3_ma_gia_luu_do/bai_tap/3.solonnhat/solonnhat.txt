@@ -1,0 +1,16 @@
+begin
+input a, b ,c
+	if a>b 
+		if a>c
+		output a la so lon nhat
+		else 
+		output c la so lon nhat
+		end if
+	else
+		if b>c
+		output b la so lon nhat
+		else
+		output c la so lon nhat
+		end if
+	end if
+end

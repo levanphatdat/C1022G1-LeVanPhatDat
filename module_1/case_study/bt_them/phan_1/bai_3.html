@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Giải phương trình bậc hai ax2 + bx + c = 0</h1>
+<script>
+    function bac2(a, b, c) {
+        let delta = b * b - 4 * a * c;
+        if (delta < 0) {
+            return 'Phương trình vô nghiệm';
+        } else if (delta === 0) {
+            let x = -b / (2 * a);
+            return 'Phương trình có 1 nghiệm duy nhất x1=x2= ' + x.toFixed(2);
+        } else {
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            return `Phương trình có 2 nghiệm phân biệt x1= ${x1.toFixed(2)} và x2= ${x2.toFixed(2)}. `
+        }
+    }
+
+    let a = prompt('Nhập a');
+    let b = prompt('Nhập b');
+    let c = prompt("Nhập c");
+    document.write(bac2(a, b, c));
+
+</script>
+</body>
+</html>

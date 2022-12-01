@@ -1,0 +1,16 @@
+begin
+input a
+if a>= 75
+output loai A
+eles
+if a>= 60
+output loai B
+else
+if a>=45
+output loai C
+else
+if a>=35
+output loai D
+else
+output loai E
+end

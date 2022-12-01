@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra kí tự</h1>
+<label>Nhập kí tự:</label>
+<input type="text" id="kiTu" oninput="nguyenAm()">
+<p id="nguyenAm"></p>
+<script>
+    function nguyenAm() {
+        let kiTu = document.getElementById('kiTu').value;
+        let dem = 0;
+        let nguyenAm = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+        for (let i = 0; i < nguyenAm.length; i++) {
+            if (kiTu === nguyenAm[i]) {
+                dem++;
+            }
+        }
+        if (dem === 0) {
+            return document.getElementById('nguyenAm').innerHTML = kiTu + ' là phụ âm.';
+        } else {
+            return document.getElementById('nguyenAm').innerHTML = kiTu + ' là nguyên âm.';
+        }
+    }
+</script>
+</body>
+</html>

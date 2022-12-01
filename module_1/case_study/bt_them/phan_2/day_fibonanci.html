@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fibonanci(n) {
+        let arr = [0, 1];
+        let phanTu;
+        for (let i = 2; i < n; i++) {
+            phanTu = arr[i - 1] + arr[i - 2];
+            arr.push(phanTu);
+        }
+        return arr;
+    }
+
+    let n = prompt('Hiện n số fibonanci');
+    document.write(n + ' phần tử đầu tiên của dãy Fibonanci là: ' + fibonanci(n));
+</script>
+</body>
+</html>

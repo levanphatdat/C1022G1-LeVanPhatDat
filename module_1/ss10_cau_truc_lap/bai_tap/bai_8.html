@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="game()">Play</button>
+<script>
+    function game() {
+        let n = +prompt('Nhap khoang so muon doan');
+        let nRandom = Math.floor(Math.random() * n)
+        for (let i = 1; i <= 3; i++) {
+            let m = prompt('Nhap so ban muon doan');
+            if (i <= 3) {
+                if (m == nRandom) {
+                    document.write('Chuc mung. Ban da doan dung');
+                    break;
+                } else if (m < nRandom) {
+                    alert('Nhap so lon hon');
+                } else {
+                    alert('Nhap so nho hon');
+                }
+            } else {
+                alert('Ban da het luot choi ');
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

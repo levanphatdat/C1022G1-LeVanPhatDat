@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <td id="stt1"></td>
+        <td id="ten1"></td>
+        <td id="ngaySinh1"></td>
+        <td id="diaChi1"></td>
+        <td id="luong1"></td>
+        <td id="chucVu1"></td>
+    </tr>
+    <tr>
+        <td id="stt2"></td>
+        <td id="ten2"></td>
+        <td id="ngaySinh2"></td>
+        <td id="diaChi2"></td>
+        <td id="luong2"></td>
+        <td id="chucVu2"></td>
+    </tr>
+    <tr>
+        <td id="stt3"></td>
+        <td id="ten3"></td>
+        <td id="ngaySinh3"></td>
+        <td id="diaChi3"></td>
+        <td id="luong3"></td>
+        <td id="chucVu3"></td>
+    </tr>
+    <tr>
+        <td id="stt4"></td>
+        <td id="ten4"></td>
+        <td id="ngaySinh4"></td>
+        <td id="diaChi4"></td>
+        <td id="luong4"></td>
+        <td id="chucVu4"></td>
+    </tr>
+</table>
+<script>
+    class QuanLiCongNhan {
+        constructor(soThuTu, hoTen, ngaySinh, diaChi, luong, chucVu) {
+            this.soThuTu = soThuTu;
+            this.hoTen = hoTen;
+            this.ngaySinh = ngaySinh;
+            this.diaChi = diaChi;
+            this.luong = luong;
+            this.chucVu = chucVu;
+        }
+
+        getSoThuTu() {
+            return this.soThuTu;
+        }
+
+        getHoTen() {
+            return this.hoTen;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        getDiaChi() {
+            return this.diaChi;
+        }
+
+        getLuong() {
+            return this.luong;
+        }
+
+        getChucVu() {
+            return this.chucVu;
+        }
+    }
+
+    let congNhan1 = new QuanLiCongNhan(1, 'Truong Tan A', '11 - 11 - 1997', 'Hue', 10000, 'Giam Doc');
+    let congNhan2 = new QuanLiCongNhan(2, 'Nguyen Van B', '11 - 01 - 1999', 'Hue', 7000, 'Truong phong');
+    let congNhan3 = new QuanLiCongNhan(3, 'Tran Van C', '21 - 3 - 2000', 'Hue', 5000, 'Nhan vien');
+    let congNhan4 = new QuanLiCongNhan(4, 'Truong Thi D', '11 - 11 - 2001', 'Hue', 5000, 'Nhan Vien');
+    document.getElementById('stt1').innerHTML = congNhan1.getSoThuTu();
+    document.getElementById('ten1').innerHTML = congNhan1.getHoTen();
+    document.getElementById('ngaySinh1').innerHTML = congNhan1.getNgaySinh();
+    document.getElementById('diaChi1').innerHTML = congNhan1.getDiaChi();
+    document.getElementById('luong1').innerHTML = congNhan1.getLuong();
+    document.getElementById('chucVu1').innerHTML = congNhan1.getChucVu();
+
+    document.getElementById('stt2').innerHTML = congNhan2.getSoThuTu();
+    document.getElementById('ten2').innerHTML = congNhan2.getHoTen();
+    document.getElementById('ngaySinh2').innerHTML = congNhan2.getNgaySinh();
+    document.getElementById('diaChi2').innerHTML = congNhan2.getDiaChi();
+    document.getElementById('luong2').innerHTML = congNhan2.getLuong();
+    document.getElementById('chucVu2').innerHTML = congNhan2.getChucVu();
+
+    document.getElementById('stt3').innerHTML = congNhan3.getSoThuTu();
+    document.getElementById('ten3').innerHTML = congNhan3.getHoTen();
+    document.getElementById('ngaySinh3').innerHTML = congNhan3.getNgaySinh();
+    document.getElementById('diaChi3').innerHTML = congNhan3.getDiaChi();
+    document.getElementById('luong3').innerHTML = congNhan3.getLuong();
+    document.getElementById('chucVu3').innerHTML = congNhan3.getChucVu();
+
+    document.getElementById('stt4').innerHTML = congNhan4.getSoThuTu();
+    document.getElementById('ten4').innerHTML = congNhan4.getHoTen();
+    document.getElementById('ngaySinh4').innerHTML = congNhan4.getNgaySinh();
+    document.getElementById('diaChi4').innerHTML = congNhan4.getDiaChi();
+    document.getElementById('luong4').innerHTML = congNhan4.getLuong();
+    document.getElementById('chucVu4').innerHTML = congNhan4.getChucVu();
+</script>
+</body>
+</html>

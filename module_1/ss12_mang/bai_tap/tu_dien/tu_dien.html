@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap tu</label>
+<input type="text" id="tu">
+<button type="button" onclick="trans()">Dich</button>
+<p id="result"></p>
+<script>
+    function trans() {
+        let tiengAnh = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let tiengViet = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let tu = document.getElementById('tu').value;
+        let a = tiengAnh.indexOf(tu);
+        document.getElementById('result').innerHTML = tiengViet[a];
+    }
+
+
+</script>
+</body>
+</html>

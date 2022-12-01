@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt('Nhap n so chia het cho 7:');
+    let sum = chiaHet7 = dem = 0;
+    for (let i = 0; i < 1000; i++) {
+        chiaHet7 += i
+        if (dem === n) {
+            break;
+        }
+        if (chiaHet7 % 7 === 0) {
+            sum += chiaHet7
+            dem++
+        }
+    }
+    document.write('Tong ' + n + ' so dau tien chia het cho 7 la: ' + sum)
+</script>
+</body>
+</html>

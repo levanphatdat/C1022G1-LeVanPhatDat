@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Nhập thu nhập cá nhân (trVND/tháng):'))
+    let bac1 = a * 0.05;
+    let bac2 = a * 0.1 - 0.25;
+    let bac3 = a * 0.15 - 0.75;
+    let bac4 = a * 0.2 - 1.65;
+    let n = bac1.toFixed(2);
+    let m = bac2.toFixed(2);
+    let p = bac3.toFixed(2);
+    let q = bac4.toFixed(2);
+    if (a > 0) {
+        if (a <= 5) {
+            alert('Thuế phải nộp là ' + n + ' trVND');
+        } else if (a <= 10) {
+            alert('Thuế phải nộp là ' + m + ' trVND');
+        } else if (a <= 18) {
+            alert('Thuế phải nộp là ' + p + ' trVND');
+        } else {
+            alert('Thuế phải nộp là ' + q + ' trVND');
+        }
+    } else {
+        alert('vui lòng nhập lại số tiền')
+    }
+</script>
+</body>
+</html>

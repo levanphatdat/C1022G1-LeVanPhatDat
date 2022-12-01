@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hiển thị các số nguyên tố đầu tiên</h1>
+<script>
+    let numbers = +prompt('Nhập số số nguyên tố muốn hiển thị');
+    let count = 0;
+    let n = 2;
+    while (count < numbers) {
+        let countSNT = 0;
+        for (let i = 1; i <= n; i++) {
+            if (n % i === 0) {
+                countSNT++;
+            }
+        }
+        if (countSNT === 2) {
+            document.write(n + "<br>");
+            count++;
+        }
+        n++;
+    }
+
+</script>
+</body>
+</html>

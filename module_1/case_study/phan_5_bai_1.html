@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tổng các số chẵn trong ma trận có kích thước m*n</h1>
+<script>
+    function tongSoChan(a, row, col) {
+        let sum = 0;
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                if (a[i][j] % 2 === 0) {
+                    sum += a[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let m = +prompt('Số hàng của mảng');
+    let n = +prompt('Số cột của mảng');
+    let a = [];
+    for (let i = 0; i < m; i++) {
+        let b = [];
+        a.push(b);
+        for (let j = 0; j < n; j++) {
+            b[j] = +prompt(`Nhập phần tử thứ [${i}][${j}] `);
+        }
+    }
+    document.write('Tổng số chẵn trong ma trận là ' + tongSoChan(a, m, n));
+
+</script>
+</body>
+</html>

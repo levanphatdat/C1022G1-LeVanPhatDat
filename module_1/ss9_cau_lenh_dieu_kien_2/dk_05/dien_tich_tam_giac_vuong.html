@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính diện tích tam giác vuông biết hai cạnh kề</h1>
+<label for="">Nhập cạnh a: </label>
+<input type="text" id="canh_a"><br><br>
+<label for="">Nhập cạnh b:</label>
+<input type="text" id="canh_b"><br><br>
+<button onclick="dientich()">Result</button>
+<p id="result"></p>
+<script>
+    function dientich() {
+        let a = document.getElementById('canh_a').value;
+        let b = document.getElementById('canh_b').value;
+        result = 0.5 * a * b;
+        if (a > 0 && b > 0) {
+            document.getElementById('result').innerHTML = 'Dien tich la: ' + result;
+        } else {
+            document.getElementById('result').innerHTML = 'Vui long nhap lai';
+        }
+    }
+</script>
+
+
+</body>
+</html>

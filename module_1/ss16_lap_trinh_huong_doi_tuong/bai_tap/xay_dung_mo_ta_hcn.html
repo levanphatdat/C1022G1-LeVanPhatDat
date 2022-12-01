@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="area"></p>
+<p id="perimeter"></p>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        area() {
+            return this.width * this.height;
+        }
+
+        perimeter() {
+            return 2 * (this.width + this.height);
+        }
+    }
+
+    let obj1 = new Rectangle(400, 200);
+    document.getElementById('area').innerHTML = 'Diện tích hình chữ nhật là: ' + obj1.area();
+    document.getElementById('perimeter').innerHTML = 'Chu vi hình chữ nhật là: ' + obj1.perimeter();
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    ctx.rect(50, 50, 400, 200);
+    ctx.strokeStyle = 'purple';
+    ctx.stroke();
+    ctx.fillStyle = 'yellow';
+    ctx.fill();
+</script>
+</body>
+</html>

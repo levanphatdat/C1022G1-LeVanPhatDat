@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soHoanHao(num) {
+        let sum = 0;
+        let flag = false;
+        for (let i = 0; i < num; i++) {
+            if (num % i === 0) {
+                sum += i;
+            }
+        }
+        if (sum === num) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    let num = +prompt('Nhập số nguyên dương');
+    document.write(soHoanHao(num));
+</script>
+</body>
+</html>

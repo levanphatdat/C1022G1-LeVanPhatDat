@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập số:</label>
+<input type="text" id="so" oninput="chuyen()">
+<p id="result"></p>
+<script>
+    function chuyen() {
+        let chu = ['Không', 'Một', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín'];
+        so = document.getElementById('so').value;
+        let so1 = so.split('');
+        let result = '';
+        for (let i = 0; i < so.length; i++) {
+            result += chu[so1[i]] + ' ';
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>

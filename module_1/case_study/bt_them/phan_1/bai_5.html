@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Xác định chuỗi đối xứng</h1>
+<script>
+    function doiXung(str) {
+        let flag = true;
+        let arr = str.split('');
+        for (let i = 0; i <= (arr.length / 2); i++) {
+            if (arr[i] !== arr[arr.length - 1 - i]) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    let str = prompt('Nhập chuỗi');
+    document.write(doiXung(str) ? 'Chuỗi đối xứng' : 'Chuỗi không đối xứng');
+</script>
+</body>
+</html>

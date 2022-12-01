@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function max(arr, row, col) {
+        let max = arr[0][0];
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+    function min(arr, row, col) {
+        let min = arr[0][0];
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                if (arr[i][j] < min) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
+    let m = +prompt('Nhập số hàng của mảng ');
+    let n = +prompt('Nhập số cột của mảng');
+    let arr = [];
+    for (let i = 0; i < m; i++) {
+        let arr1 = [];
+        arr.push(arr1);
+        for (let j = 0; j < n; j++) {
+            arr1[j] = +prompt(`Nhập phần tử thứ [${i}][${j}] `);
+        }
+    }
+    document.write('Giá trị lớn nhất trong mảng là: ' + max(arr, m, n) + '<br>');
+    document.write('Giá trị bé nhất trong mảng là: ' + min(arr, m, n));
+</script>
+</body>
+</html>

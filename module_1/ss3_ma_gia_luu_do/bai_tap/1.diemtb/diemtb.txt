@@ -1,0 +1,5 @@
+begin
+	input toan, li, hoa
+	average= (toan+li+hoa)/3
+	display average
+end

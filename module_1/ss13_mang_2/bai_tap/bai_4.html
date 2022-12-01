@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập chuỗi:');
+    let mang = a.split('');
+    let dem = 0;
+
+    for (i = 0; i < mang.length; i++) {
+        if (mang[i] != '') {
+            dem++;
+        }
+    }
+    document.write(`Chuỗi có ${dem} từ`);
+</script>
+</body>
+</html>

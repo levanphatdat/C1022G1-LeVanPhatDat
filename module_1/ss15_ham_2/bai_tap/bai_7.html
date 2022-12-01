@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function daoSo(a, b) {
+        let c = a
+        a = b
+        b = c
+        return 'Số thứ nhất là ' + a + ' và số thứ hai là ' + b;
+    }
+
+    let m = prompt('Nhập sô m:');
+    let n = prompt('Nhập sô n:');
+    document.write(daoSo(m, n));
+</script>
+</body>
+</html>

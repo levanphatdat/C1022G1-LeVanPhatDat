@@ -1,0 +1,8 @@
+begin
+	n la so duoc sinh so ngau nhien trong khaong 0-9
+	nhap vao m
+	if (n==m)
+		output "du doan dung"
+	else
+		output "du doan sai"
+end

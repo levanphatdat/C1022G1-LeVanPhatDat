@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập chuỗi thứ nhât:');
+    let b = prompt('Nhập chuỗi thứ hai');
+    let mang1 = a.split('');
+    let mang2 = b.split('');
+    let dung = true;
+    if (mang1.length === mang2.length) {
+        for (let i = 0; i < mang1.length; i++) {
+            if (mang1[i] === mang2[i]) {
+            } else {
+                alert('Hai mảng khác nhau.');
+                dung = false;
+                break;
+            }
+        }
+        if (dung) {
+            alert('Hai mảng giống nhau');
+        }
+    } else {
+        alert('Hai mảng khác nhau.');
+    }
+</script>
+</body>
+</html>

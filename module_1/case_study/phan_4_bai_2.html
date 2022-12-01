@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Đếm số lượng kí tự khác nhau trong xâu</h1>
+<script>
+    function differentSymbolsNaive(s) {
+        let mang = s.split('');
+        let mang1 = [];
+        let dem = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (mang1.indexOf(mang[i]) === -1) {
+                mang1.push(mang[i]);
+                dem++;
+            }
+        }
+        return dem;
+    }
+
+    let chuoi = prompt('Nhập chuỗi');
+    document.write('Số kí tự khác nhau là ' + differentSymbolsNaive(chuoi))
+</script>
+</body>
+</html>
