@@ -3,7 +3,7 @@ package ss3_mang_va_phuong_thuc_trong_Java.bai_tap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class AddElementElementToArray {
+public class AddElementToArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input length:");
