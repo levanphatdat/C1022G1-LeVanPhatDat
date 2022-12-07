@@ -22,9 +22,9 @@ public class SumCol {
         for (int i = 0; i < row; i++) {
             System.out.println(Arrays.toString(arr[i]));
         }
+        int sum = 0;
         System.out.println("Enter the col you want sum");
         int num = Integer.parseInt(scanner.nextLine());
-        int sum = 0;
         for (int i = 0; i < row; i++) {
             sum += arr[i][num];
         }
