@@ -41,11 +41,27 @@ public class Fan {
         this.color = color;
     }
 
+//    public String toString() {
+//        if (on) {
+//            return "Speed: " + this.speed + ", Color: " + this.color + ", Radius: " + this.radius + " fan is on.";
+//        } else {
+//            return "Color: " + this.color + ", Radius: " + this.radius + " fan is off.";
+//        }
+//    }
+
+    @Override
     public String toString() {
         if (on) {
-            return "Speed: " + this.speed + ", Color: " + this.color + ", Radius: " + this.radius + " fan is on.";
+            return "Fan{" +
+                    "speed=" + speed +
+                    ", radius=" + radius +
+                    ", color=" + color +
+                    "} fan is on.";
         } else {
-            return "Color: " + this.color + ", Radius: " + this.radius + " fan is off.";
+            return "Fan{" +
+                    "radius=" + radius +
+                    ", color=" + color +
+                    "} fan is off.";
         }
     }
 }
