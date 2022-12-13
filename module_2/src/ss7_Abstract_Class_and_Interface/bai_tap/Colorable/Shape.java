@@ -1,6 +1,6 @@
 package ss7_Abstract_Class_and_Interface.bai_tap.Colorable;
 
-public abstract class Shape implements IColorable {
+public abstract class Shape {
     private String color = "blue";
     private boolean filled = true;
 

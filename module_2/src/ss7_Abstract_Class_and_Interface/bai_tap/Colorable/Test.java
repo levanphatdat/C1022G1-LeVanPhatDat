@@ -7,9 +7,24 @@ public class Test {
         shapes[1] = new Rectangle("white", false, 5, 7);
         shapes[2] = new Square("black", true, 6);
         for (Shape shape : shapes) {
-            shape.howToColor();
-            System.out.println(shape.toString());
-            System.out.println("");
+            if (shape instanceof Square) {
+                IColorable squareInterface = (Square) shape;
+                System.out.println(shape);
+                squareInterface.howToColor();
+                System.out.println();
+            }
+            if (shape instanceof Circle) {
+                IColorable circleInterface = (Circle) shape;
+                System.out.println(shape);
+                circleInterface.howToColor();
+                System.out.println();
+            }
+            if (shape instanceof Rectangle) {
+                IColorable rectangleInterface = (Rectangle) shape;
+                System.out.println(shape);
+                rectangleInterface.howToColor();
+                System.out.println();
+            }
         }
 
     }

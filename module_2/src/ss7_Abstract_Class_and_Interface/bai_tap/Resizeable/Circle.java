@@ -1,6 +1,6 @@
 package ss7_Abstract_Class_and_Interface.bai_tap.Resizeable;
 
-public class Circle extends Geometry implements IResizeable {
+public class Circle extends Geometry {
     private double radius;
 
     public Circle() {
