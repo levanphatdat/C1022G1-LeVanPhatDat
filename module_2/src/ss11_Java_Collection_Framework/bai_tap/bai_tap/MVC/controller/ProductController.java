@@ -20,6 +20,7 @@ public class ProductController {
             System.out.println("5. Search product by Name.");
             System.out.println("6. Sort products ascending, descending by Price");
             System.out.println("7. Exit.");
+            System.out.println("Enter your choice : ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:

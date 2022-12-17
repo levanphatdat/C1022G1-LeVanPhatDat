@@ -104,7 +104,7 @@ public class ProductManager implements IProductManager {
 
     public Product searchName(String name) {
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getName() == name) {
+            if (products.get(i).getName().equals(name)) {
                 return products.get(i);
             }
         }
@@ -127,9 +127,9 @@ public class ProductManager implements IProductManager {
                         products.set(j, temp);
                     }
                 }
-                for (Product product : products) {
-                    System.out.println(product.toString());
-                }
+            }
+            for (Product product : products) {
+                System.out.println(product.toString());
             }
         } else if (choice == 2) {
             for (int i = 0; i < products.size() - 1; i++) {
@@ -140,9 +140,10 @@ public class ProductManager implements IProductManager {
                         products.set(j, temp);
                     }
                 }
-                for (Product product : products) {
-                    System.out.println(product.toString());
-                }
+
+            }
+            for (Product product : products) {
+                System.out.println(product.toString());
             }
         } else if (choice == 3) {
             return;
