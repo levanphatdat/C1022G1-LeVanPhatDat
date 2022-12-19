@@ -1,12 +1,14 @@
-package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service;
+package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository;
 
+import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.controller.ProductController;
 import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.model.Product;
+import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service.ProductService;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductManager implements IProductManager {
+public class ProductRepository implements IProductRepository {
     Scanner scanner = new Scanner(System.in);
     private static List<Product> products = new LinkedList<>();
 
@@ -64,9 +66,9 @@ public class ProductManager implements IProductManager {
     }
 
     public Product checkID(int updateID) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() != updateID) {
-                return products.get(i);
+        for (Product product : products) {
+            if (product.getId() == updateID) {
+                return product;
             }
         }
         return null;
@@ -87,7 +89,7 @@ public class ProductManager implements IProductManager {
     @Override
     public void display() {
         for (Product product : products) {
-            System.out.println(product.toString());
+            System.out.println(product);
         }
     }
 
@@ -95,20 +97,11 @@ public class ProductManager implements IProductManager {
     public void search() {
         System.out.println("Enter the name you want search : ");
         String name = scanner.nextLine();
-        if (searchName(name) == null) {
-            System.out.println("The product name could not be found !!!");
-        } else {
-            System.out.println(searchName(name));
-        }
-    }
-
-    public Product searchName(String name) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getName().equals(name)) {
-                return products.get(i);
+        for (Product product : products) {
+            if (product.getName().contains(name)) {
+                System.out.println(product);
             }
         }
-        return null;
     }
 
     @Override

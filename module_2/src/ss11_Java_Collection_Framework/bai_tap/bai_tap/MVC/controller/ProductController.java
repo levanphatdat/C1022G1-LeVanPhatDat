@@ -1,16 +1,17 @@
 package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.controller;
 
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service.ProductManager;
+import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository.ProductRepository;
+import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service.ProductService;
 
 import java.util.Scanner;
 
 public class ProductController {
     //    thêm, sửa, xoá, hiển thị, tìm kiếm, sắp xếp
     Scanner scanner = new Scanner(System.in);
-    ProductManager productManager = new ProductManager();
+    ProductService productManager = new ProductService();
 
     public void menuProductManager() {
-        while (true) {
+        do {
             System.out.println("-----------------------------------------------");
             System.out.println("Product Management Menu");
             System.out.println("1. Add product.");
@@ -48,6 +49,6 @@ public class ProductController {
                     System.out.println("Your choice is wrong !!!");
                     break;
             }
-        }
+        } while (true);
     }
 }
