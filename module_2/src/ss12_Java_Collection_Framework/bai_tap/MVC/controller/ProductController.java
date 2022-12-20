@@ -1,6 +1,7 @@
 package ss12_Java_Collection_Framework.bai_tap.MVC.controller;
 
 import ss12_Java_Collection_Framework.bai_tap.MVC.model.model.Product;
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.service.IProductService;
 import ss12_Java_Collection_Framework.bai_tap.MVC.model.service.ProductService;
 
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class ProductController {
     //    thêm, sửa, xoá, hiển thị, tìm kiếm, sắp xếp
     Scanner scanner = new Scanner(System.in);
-    ProductService productManager = new ProductService();
+    IProductService productManager = new ProductService();
 
     public void menuProductManager() {
         do {
