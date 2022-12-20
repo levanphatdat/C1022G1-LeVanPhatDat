@@ -1,8 +1,6 @@
-package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository;
+package ss12_Java_Collection_Framework.bai_tap.MVC.model.repository;
 
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.controller.ProductController;
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.model.Product;
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service.ProductService;
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.model.Product;
 
 import java.util.LinkedList;
 import java.util.List;

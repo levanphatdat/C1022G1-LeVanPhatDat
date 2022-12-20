@@ -1,4 +1,4 @@
-package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.model;
+package ss12_Java_Collection_Framework.bai_tap.MVC.model.model;
 
 public class Product {
     private int id;

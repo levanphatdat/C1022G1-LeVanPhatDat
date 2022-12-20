@@ -1,4 +1,4 @@
-package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository;
+package ss12_Java_Collection_Framework.bai_tap.MVC.model.repository;
 
 public interface IProductRepository {
     //    thêm, sửa, xoá, hiển thị, tìm kiếm, sắp xếp

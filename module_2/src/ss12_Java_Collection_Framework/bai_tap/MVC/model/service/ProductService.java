@@ -1,7 +1,7 @@
-package ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.service;
+package ss12_Java_Collection_Framework.bai_tap.MVC.model.service;
 
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository.IProductRepository;
-import ss11_Java_Collection_Framework.bai_tap.bai_tap.MVC.model.repository.ProductRepository;
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.repository.IProductRepository;
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.repository.ProductRepository;
 
 public class ProductService implements IProductService {
 
