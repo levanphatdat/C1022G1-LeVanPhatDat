@@ -1,5 +1,6 @@
 package ss12_Java_Collection_Framework.bai_tap.MVC.controller;
 
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.model.Product;
 import ss12_Java_Collection_Framework.bai_tap.MVC.model.service.ProductService;
 
 import java.util.Scanner;
@@ -27,7 +28,20 @@ public class ProductController {
                     productManager.add();
                     break;
                 case 2:
-                    productManager.update();
+                    System.out.println("Input id product : ");
+                    int checkID = Integer.parseInt(scanner.nextLine());
+                    Product product = productManager.checkId(checkID);
+                    if (product != null) {
+                        System.out.println("Enter the name : ");
+                        String newName = scanner.nextLine();
+                        System.out.println("Enter the price : ");
+                        double newPrice = Double.parseDouble(scanner.nextLine());
+                        product.setName(newName);
+                        product.setPrice(newPrice);
+                        productManager.update(product);
+                    } else {
+                        System.out.println("Not existed");
+                    }
                     break;
                 case 3:
                     productManager.delete();

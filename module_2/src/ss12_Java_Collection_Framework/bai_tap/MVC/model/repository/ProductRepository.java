@@ -45,32 +45,25 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void update() {
-        System.out.println("Enter the ID you want to update :");
-        int updateID = Integer.parseInt(scanner.nextLine());
-        if (checkID(updateID) != null) {
-            System.out.println("Enter the name you want update : ");
-            String updateName = scanner.nextLine();
-            System.out.println("Enter the price you want update : ");
-            double updatePrice = Double.parseDouble(scanner.nextLine());
-            Product dataUpdate = new Product(updateID, updateName, updatePrice);
-            int index = products.indexOf(checkID(updateID));
-            products.set(index, dataUpdate);
-            System.out.println("Update complete !!!");
-        } else {
-            System.out.println("ID not found !!!");
+    public void update(Product product) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId() == product.getId()) {
+                products.set(i, product);
+                break;
+            }
         }
-
     }
 
-    public Product checkID(int updateID) {
+    @Override
+    public Product checkID(int id) {
         for (Product product : products) {
-            if (product.getId() == updateID) {
+            if (product.getId() == id) {
                 return product;
             }
         }
         return null;
     }
+
 
     @Override
     public void delete() {

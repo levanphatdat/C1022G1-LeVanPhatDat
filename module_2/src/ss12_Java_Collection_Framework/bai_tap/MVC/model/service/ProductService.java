@@ -1,5 +1,6 @@
 package ss12_Java_Collection_Framework.bai_tap.MVC.model.service;
 
+import ss12_Java_Collection_Framework.bai_tap.MVC.model.model.Product;
 import ss12_Java_Collection_Framework.bai_tap.MVC.model.repository.IProductRepository;
 import ss12_Java_Collection_Framework.bai_tap.MVC.model.repository.ProductRepository;
 
@@ -14,8 +15,13 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void update() {
-        iProductRepository.update();
+    public void update(Product product) {
+        iProductRepository.update(product);
+    }
+
+    @Override
+    public Product checkId(int id) {
+        return iProductRepository.checkID(id);
     }
 
     @Override
