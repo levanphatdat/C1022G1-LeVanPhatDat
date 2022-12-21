@@ -1,4 +1,4 @@
-package ss15_exception.thuc_hanh;
+package ss15_exception_debug.thuc_hanh;
 
 import java.util.Random;
 import java.util.Scanner;
