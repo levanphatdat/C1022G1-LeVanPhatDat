@@ -8,7 +8,6 @@ public class ProductManagerController {
     private static Scanner scanner = new Scanner(System.in);
     private ProductService productService = new ProductService();
     private ChoiceSortController choiceSortController = new ChoiceSortController();
-
     public void menuManagementProduct() {
         while (true) {
             System.out.println("---------------------------------------------");
