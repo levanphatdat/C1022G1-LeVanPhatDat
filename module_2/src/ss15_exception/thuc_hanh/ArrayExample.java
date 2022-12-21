@@ -19,12 +19,13 @@ public class ArrayExample {
         ArrayExample arrayExample = new ArrayExample();
         Integer[] arr = arrayExample.createRandom();
         Scanner scanner = new Scanner(System.in);
+        System.out.println();
         System.out.println("Enter the index of any element: ");
         int x = scanner.nextInt();
         try {
             System.out.println("The value of the element with index " + x + " is " + arr[x]);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Index exceeds the limit of the array");
+            System.out.println("Index exceeds the limit of the array!!!");
         }
     }
 }
