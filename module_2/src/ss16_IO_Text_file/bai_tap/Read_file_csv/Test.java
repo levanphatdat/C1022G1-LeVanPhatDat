@@ -11,7 +11,7 @@ public class Test {
         FileReader fileReader;
         BufferedReader bufferedReader = null;
         try {
-            fileReader = new FileReader(PATH);
+            fileReader = new FileReader(path);
             bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] arr;
@@ -41,6 +41,6 @@ public class Test {
 //    }
     public static void main(String[] args) {
         Test.readFile(PATH);
-//        Test.writeFile(WRITE_PATH);
+//        Test.writeFile(WRITE_PATH,);
     }
 }
