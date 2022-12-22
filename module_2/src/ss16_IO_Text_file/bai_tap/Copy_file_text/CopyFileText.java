@@ -10,10 +10,10 @@ public class CopyFileText {
 
 
     public static void main(String[] args) {
-        ReadAndWriteCopyFile readAndWriteCopyFile = new ReadAndWriteCopyFile();
-        List<String> list = ReadAndWriteCopyFile.readFile(SOURCE);
+        ReadAndWriteCharFile readAndWriteCopyFile = new ReadAndWriteCharFile();
+        List<String> list = ReadAndWriteCharFile.readFile(SOURCE);
         int count = sumChar(list);
-        readAndWriteCopyFile.writeFile(TARGET, count);
+        readAndWriteCopyFile.writeFile(TARGET, count, list);
     }
 
     public static int sumChar(List<String> list) {
