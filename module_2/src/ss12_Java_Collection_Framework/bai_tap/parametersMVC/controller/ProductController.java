@@ -13,10 +13,10 @@ public class ProductController {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("-------------------------------------");
-            System.out.println("1. Add prduct.");
+            System.out.println("1. Add product.");
             System.out.println("2. Update product.");
             System.out.println("3. Delete product.");
-            System.out.println("4. Display prodcut.");
+            System.out.println("4. Display product.");
             System.out.println("5. Search product.");
             System.out.println("6. Sort product.");
             System.out.println("7. Exit");

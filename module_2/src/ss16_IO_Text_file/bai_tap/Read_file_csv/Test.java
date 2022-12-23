@@ -5,7 +5,6 @@ import java.io.*;
 public class Test {
 
     public static final String PATH = "C:\\Users\\Admin\\Desktop\\CG\\module_2\\src\\ss16_IO_Text_file\\bai_tap\\Read_file_csv\\file.csv";
-    public static final String WRITE_PATH = "C:\\Users\\Admin\\Desktop\\CG\\module_2\\src\\ss16_IO_Text_file\\bai_tap\\Read_file_csv\\test.csv";
 
     public static void readFile(String path) {
         FileReader fileReader;
@@ -34,13 +33,8 @@ public class Test {
             }
         }
     }
-//    public static void writeFile(Country country) throws IOException {
-//        BufferedWriter br=new BufferedWriter(new FileWriter(WRITE_PATH));
-//        br.write(country.getId()+","+country.getCode()+","+country.getName()+"\n");
-//        br.close();
-//    }
+
     public static void main(String[] args) {
         Test.readFile(PATH);
-//        Test.writeFile(WRITE_PATH,);
     }
 }
