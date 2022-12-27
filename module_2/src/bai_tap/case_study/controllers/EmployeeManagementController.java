@@ -1,8 +1,8 @@
 package bai_tap.case_study.controllers;
 
 import bai_tap.case_study.models.Person.Employee;
-import bai_tap.case_study.services.IService.IEmployeeService;
-import bai_tap.case_study.services.Service.EmployeeServiceImpl;
+import bai_tap.case_study.services.EmployeeService.IEmployeeService;
+import bai_tap.case_study.services.EmployeeService.EmployeeServiceImpl;
 
 import java.util.Scanner;
 
@@ -100,6 +100,7 @@ public class EmployeeManagementController {
                     break;
                 case 5:
                     furamaController.displayMainMenu();
+                    break;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }

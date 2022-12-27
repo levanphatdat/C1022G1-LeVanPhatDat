@@ -22,11 +22,8 @@ public class FuramaController {
                     employeeManagementController.employeeManagement();
                     break;
                 case 2:
-                    System.out.println("1.\tDisplay list customers\n" +
-                            "2.\tAdd new customer\n" +
-                            "3.\tEdit customer\n" +
-                            "4.\tReturn main menu\n" +
-                            "Enter your choice : ");
+                    CustomerManagementController customerManagementController=new CustomerManagementController();
+                    customerManagementController.customerManagement();
                     break;
                 case 3:
                     System.out.println("1\tDisplay list facility\n" +
