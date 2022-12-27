@@ -17,6 +17,7 @@ public class EmployeeManagementController {
                     "3\tDelete employee\n" +
                     "4\tEdit employee\n" +
                     "5\tReturn main menu\n" +
+                    "-----------------------------\n" +
                     "Enter your choice : ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {

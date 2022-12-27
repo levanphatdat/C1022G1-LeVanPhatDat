@@ -89,6 +89,7 @@ public class CustomerManagementController {
                 case 4:
                     FuramaController furamaController = new FuramaController();
                     furamaController.displayMainMenu();
+                    break;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }
