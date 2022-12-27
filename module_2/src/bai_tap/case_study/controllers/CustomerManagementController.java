@@ -1,7 +1,6 @@
 package bai_tap.case_study.controllers;
 
 import bai_tap.case_study.models.Person.Customer;
-import bai_tap.case_study.models.Person.Employee;
 import bai_tap.case_study.services.CustomerService.CustomerServiceImpl;
 import bai_tap.case_study.services.CustomerService.ICustomerService;
 
@@ -9,7 +8,6 @@ import java.util.Scanner;
 
 public class CustomerManagementController {
     public void customerManagement() {
-        FuramaController furamaController = new FuramaController();
         ICustomerService iCustomerService = new CustomerServiceImpl();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -28,25 +26,30 @@ public class CustomerManagementController {
                 case 2:
                     System.out.println("Enter the id : ");
                     String addID = scanner.nextLine();
-                    System.out.println("Enter the name : ");
-                    String addName = scanner.nextLine();
-                    System.out.println("Enter the day of birth : ");
-                    String addBirth = scanner.nextLine();
-                    System.out.println("Enter the gender : ");
-                    boolean addGender = Boolean.parseBoolean(scanner.nextLine());
-                    System.out.println("Enter the identity code : ");
-                    String addIdentity = scanner.nextLine();
-                    System.out.println("Enter the phone number : ");
-                    String addPhone = scanner.nextLine();
-                    System.out.println("Enter the email : ");
-                    String addEmail = scanner.nextLine();
-                    System.out.println("Enter the type of guest : ");
-                    String addTypeOfGuest = scanner.nextLine();
-                    System.out.println("Enter the address : ");
-                    String addAddress = scanner.nextLine();
-                    Customer customer = new Customer(addID, addName, addBirth, addGender, addIdentity, addPhone, addEmail, addTypeOfGuest, addAddress);
-                    iCustomerService.add(customer);
-                    System.out.println("Add new customer complete.");
+                    Customer customer0 = iCustomerService.checkID(addID);
+                    if (customer0 == null) {
+                        System.out.println("Enter the name : ");
+                        String addName = scanner.nextLine();
+                        System.out.println("Enter the day of birth : ");
+                        String addBirth = scanner.nextLine();
+                        System.out.println("Enter the gender : ");
+                        String addGender = scanner.nextLine();
+                        System.out.println("Enter the identity code : ");
+                        String addIdentity = scanner.nextLine();
+                        System.out.println("Enter the phone number : ");
+                        String addPhone = scanner.nextLine();
+                        System.out.println("Enter the email : ");
+                        String addEmail = scanner.nextLine();
+                        System.out.println("Enter the type of guest : ");
+                        String addTypeOfGuest = scanner.nextLine();
+                        System.out.println("Enter the address : ");
+                        String addAddress = scanner.nextLine();
+                        Customer customer = new Customer(addID, addName, addBirth, addGender, addIdentity, addPhone, addEmail, addTypeOfGuest, addAddress);
+                        iCustomerService.add(customer);
+                        System.out.println("Add new customer complete.");
+                    } else {
+                        System.out.println("ID is duplicated !!!");
+                    }
                     break;
                 case 3:
                     System.out.println("Enter the id your want edit : ");
@@ -58,7 +61,7 @@ public class CustomerManagementController {
                         System.out.println("Enter the day of birth : ");
                         String editBirth = scanner.nextLine();
                         System.out.println("Enter the gender : ");
-                        boolean editGender = Boolean.parseBoolean(scanner.nextLine());
+                        String editGender = scanner.nextLine();
                         System.out.println("Enter the identity code : ");
                         String editIdentity = scanner.nextLine();
                         System.out.println("Enter the phone number : ");
@@ -84,6 +87,7 @@ public class CustomerManagementController {
                     }
                     break;
                 case 4:
+                    FuramaController furamaController = new FuramaController();
                     furamaController.displayMainMenu();
                 default:
                     System.out.println("You choose wrong. Please choose again");

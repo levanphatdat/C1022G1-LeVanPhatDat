@@ -8,9 +8,9 @@ import java.util.List;
 public class CustomerRepository implements ICustomerRepository{
     public static List<Customer> customerList= new LinkedList<>();
     static {
-        customerList.add(new Customer("KH-1","Mr.Dat","27/09/1999",true,"191612354","0985123547","dathhi@gmail.com","Diamond","Hue"));
-        customerList.add(new Customer("KH-2","Mrs.Hi","01/12/1999",false,"191958263","0981125485","cobengoknnghek@gmail.com","Member","Hue"));
-        customerList.add(new Customer("KH-3","Mr.Minh","15/06/1985",true,"191256484","0981255552","chubedan@gmail.com","Gold","Da Nang"));
+        customerList.add(new Customer("KH-1","Mr.Dat","27/09/1999","male","191612354","0985123547","dathhi@gmail.com","Diamond","Hue"));
+        customerList.add(new Customer("KH-2","Mrs.Hi","01/12/1999","female","191958263","0981125485","cobengoknnghek@gmail.com","Member","Hue"));
+        customerList.add(new Customer("KH-3","Mr.Minh","15/06/1985","male","191256484","0981255552","chubedan@gmail.com","Gold","Da Nang"));
     }
 
     @Override

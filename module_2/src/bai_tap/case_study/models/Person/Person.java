@@ -5,7 +5,7 @@ public abstract class Person {
     private String id;
     private String name;
     private String dayOfBirth;
-    private boolean gender;
+    private String gender;
     private String identityCard;
     private String phoneNumber;
     private String email;
@@ -13,7 +13,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String id, String name, String dayOfBirth, boolean gender, String identityCard, String phoneNumber, String email) {
+    public Person(String id, String name, String dayOfBirth, String gender, String identityCard, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -39,11 +39,11 @@ public abstract class Person {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

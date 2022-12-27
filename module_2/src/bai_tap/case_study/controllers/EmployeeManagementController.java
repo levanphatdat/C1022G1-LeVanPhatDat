@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class EmployeeManagementController {
     public void employeeManagement() {
-        FuramaController furamaController = new FuramaController();
         IEmployeeService iEmployeeService = new EmployeeServiceImpl();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -27,26 +26,31 @@ public class EmployeeManagementController {
                 case 2:
                     System.out.println("Enter the id : ");
                     String addID = scanner.nextLine();
-                    System.out.println("Enter the name : ");
-                    String addName = scanner.nextLine();
-                    System.out.println("Enter the day of birth : ");
-                    String addBirth = scanner.nextLine();
-                    System.out.println("Enter the gender : ");
-                    boolean addGender = Boolean.parseBoolean(scanner.nextLine());
-                    System.out.println("Enter the identity code : ");
-                    String addIdentity = scanner.nextLine();
-                    System.out.println("Enter the phone number : ");
-                    String addPhone = scanner.nextLine();
-                    System.out.println("Enter the email : ");
-                    String addEmail = scanner.nextLine();
-                    System.out.println("Enter the qualification : ");
-                    String addQualification = scanner.nextLine();
-                    System.out.println("Enter the position : ");
-                    String addPosition = scanner.nextLine();
-                    System.out.println("Enter the salary : ");
-                    String addSalary = scanner.nextLine();
-                    Employee employee = new Employee(addID, addName, addBirth, addGender, addIdentity, addPhone, addEmail, addQualification, addPosition, addSalary);
-                    iEmployeeService.add(employee);
+                    Employee employee3 = iEmployeeService.checkID(addID);
+                    if (employee3 == null) {
+                        System.out.println("Enter the name : ");
+                        String addName = scanner.nextLine();
+                        System.out.println("Enter the day of birth : ");
+                        String addBirth = scanner.nextLine();
+                        System.out.println("Enter the gender : ");
+                        String addGender = scanner.nextLine();
+                        System.out.println("Enter the identity code : ");
+                        String addIdentity = scanner.nextLine();
+                        System.out.println("Enter the phone number : ");
+                        String addPhone = scanner.nextLine();
+                        System.out.println("Enter the email : ");
+                        String addEmail = scanner.nextLine();
+                        System.out.println("Enter the qualification : ");
+                        String addQualification = scanner.nextLine();
+                        System.out.println("Enter the position : ");
+                        String addPosition = scanner.nextLine();
+                        System.out.println("Enter the salary : ");
+                        String addSalary = scanner.nextLine();
+                        Employee employee = new Employee(addID, addName, addBirth, addGender, addIdentity, addPhone, addEmail, addQualification, addPosition, addSalary);
+                        iEmployeeService.add(employee);
+                    } else {
+                        System.out.println("ID is duplicated !!!");
+                    }
                     break;
                 case 3:
                     System.out.println("Enter the id your want delete : ");
@@ -70,7 +74,7 @@ public class EmployeeManagementController {
                         System.out.println("Enter the day of birth : ");
                         String editBirth = scanner.nextLine();
                         System.out.println("Enter the gender : ");
-                        boolean editGender = Boolean.parseBoolean(scanner.nextLine());
+                        String editGender = scanner.nextLine();
                         System.out.println("Enter the identity code : ");
                         String editIdentity = scanner.nextLine();
                         System.out.println("Enter the phone number : ");
@@ -99,6 +103,7 @@ public class EmployeeManagementController {
                     }
                     break;
                 case 5:
+                    FuramaController furamaController = new FuramaController();
                     furamaController.displayMainMenu();
                     break;
                 default:
