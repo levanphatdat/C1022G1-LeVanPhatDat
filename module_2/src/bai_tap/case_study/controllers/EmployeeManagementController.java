@@ -2,13 +2,13 @@ package bai_tap.case_study.controllers;
 
 import bai_tap.case_study.models.Person.Employee;
 import bai_tap.case_study.services.EmployeeService.IEmployeeService;
-import bai_tap.case_study.services.EmployeeService.EmployeeServiceImpl;
+import bai_tap.case_study.services.EmployeeService.EmployeeService;
 
 import java.util.Scanner;
 
 public class EmployeeManagementController {
     public void employeeManagement() {
-        IEmployeeService iEmployeeService = new EmployeeServiceImpl();
+        IEmployeeService iEmployeeService = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("------ Employee Management ------\n" +

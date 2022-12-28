@@ -9,9 +9,9 @@ public class EmployeeRepository implements IEmployeeRepository {
     public static List<Employee> employeeList = new ArrayList<>();
 
     static {
-        employeeList.add(new Employee("NV-1", "Truong", "25/12/2022", "male", "191925684", "0923654123", "truong123@gmail.com", "After university", "Director", "50.000.000"));
-        employeeList.add(new Employee("NV-2", "Dat", "12/02/1999", "male", "191925341", "0936452145", "datcute@gmail.com", "university", "manager", "30.000.000"));
-        employeeList.add(new Employee("NV-3", "Khai", "05/07/2000", "male", "191936202", "0983242364", "khailor@gmail.com", "intermediate", "receptionist", "5.000.000"));
+        employeeList.add(new Employee("NV-1", "Truong", "25/12/2022", "male", "191925684", "0923654123", "truong123@gmail.com", "After university", "Director", "50000000"));
+        employeeList.add(new Employee("NV-2", "Dat", "12/02/1999", "male", "191925341", "0936452145", "datcute@gmail.com", "university", "manager", "30000000"));
+        employeeList.add(new Employee("NV-3", "Khai", "05/07/2000", "male", "191936202", "0983242364", "khailor@gmail.com", "intermediate", "receptionist", "5000000"));
     }
 
     @Override

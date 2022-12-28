@@ -4,7 +4,7 @@ import bai_tap.case_study.models.Person.Employee;
 import bai_tap.case_study.repository.Employee.IEmployeeRepository;
 import bai_tap.case_study.repository.Employee.EmployeeRepository;
 
-public class EmployeeServiceImpl implements IEmployeeService {
+public class EmployeeService implements IEmployeeService {
     IEmployeeRepository iEmployeeRepository = new EmployeeRepository();
 
     @Override

@@ -1,14 +1,14 @@
 package bai_tap.case_study.controllers;
 
 import bai_tap.case_study.models.Person.Customer;
-import bai_tap.case_study.services.CustomerService.CustomerServiceImpl;
+import bai_tap.case_study.services.CustomerService.CustomerService;
 import bai_tap.case_study.services.CustomerService.ICustomerService;
 
 import java.util.Scanner;
 
 public class CustomerManagementController {
     public void customerManagement() {
-        ICustomerService iCustomerService = new CustomerServiceImpl();
+        ICustomerService iCustomerService = new CustomerService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("----- Customer Management -----\n" +

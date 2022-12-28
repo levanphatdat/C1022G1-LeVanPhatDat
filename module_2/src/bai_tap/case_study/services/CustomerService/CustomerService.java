@@ -4,7 +4,7 @@ import bai_tap.case_study.models.Person.Customer;
 import bai_tap.case_study.repository.Customer.CustomerRepository;
 import bai_tap.case_study.repository.Customer.ICustomerRepository;
 
-public class CustomerServiceImpl implements ICustomerService {
+public class CustomerService implements ICustomerService {
     ICustomerRepository iCustomerRepository =new CustomerRepository();
     @Override
     public void display() {

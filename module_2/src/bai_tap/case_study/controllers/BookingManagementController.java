@@ -1,13 +1,13 @@
 package bai_tap.case_study.controllers;
 
-import bai_tap.case_study.services.BookingService.BookingServiceImpl;
+import bai_tap.case_study.services.BookingService.BookingService;
 import bai_tap.case_study.services.BookingService.IBookingService;
 
 import java.util.Scanner;
 
 public class BookingManagementController {
     public void bookingManagement() {
-        IBookingService iBookingService = new BookingServiceImpl();
+        IBookingService iBookingService = new BookingService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("---- Booking Management ----\n" +

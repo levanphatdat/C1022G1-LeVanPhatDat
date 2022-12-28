@@ -1,13 +1,14 @@
 package bai_tap.case_study.controllers;
 
-import bai_tap.case_study.services.FacilityService.FacilityServiceImpl;
+
+import bai_tap.case_study.services.FacilityService.FacilityService;
 import bai_tap.case_study.services.FacilityService.IFacilityService;
 
 import java.util.Scanner;
 
 public class FacilityManagementController {
     public void facilityManagement() {
-        IFacilityService iFacilityService = new FacilityServiceImpl();
+        IFacilityService iFacilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("---- Facility Management ----\n" +
@@ -20,6 +21,7 @@ public class FacilityManagementController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
+                    iFacilityService.display();
                     break;
                 case 2:
                     break;

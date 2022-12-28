@@ -1,17 +1,15 @@
 package bai_tap.case_study.models.Facility;
 
-import bai_tap.case_study.models.Facility.Facility;
-
 public class Villa extends Facility {
     private String roomStandard;
-    private double poolArea;
+    private String poolArea;
     private int floors;
 
     public Villa() {
     }
 
-    public Villa(String serviceName, double usableArea, double rentalCosts, int maximumPeople, int rentalType, String roomStandard, double poolArea, int floors) {
-        super(serviceName, usableArea, rentalCosts, maximumPeople, rentalType);
+    public Villa(String serviceCode, String serviceName, String usableArea, String rentalCosts, int maximumPeople, String rentalType, String roomStandard, String poolArea, int floors) {
+        super(serviceCode, serviceName, usableArea, rentalCosts, maximumPeople, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.floors = floors;
@@ -25,11 +23,11 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public double getPoolArea() {
+    public String getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(String poolArea) {
         this.poolArea = poolArea;
     }
 
@@ -44,9 +42,10 @@ public class Villa extends Facility {
     @Override
     public String toString() {
         return "Villa { " + super.toString()+
-                "roomStandard = " + roomStandard +
+                ", roomStandard = " + roomStandard +
                 ", poolArea = " + poolArea +
                 ", floors = " + floors +
                 " }" ;
     }
+
 }

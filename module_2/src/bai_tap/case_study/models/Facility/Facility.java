@@ -1,21 +1,31 @@
 package bai_tap.case_study.models.Facility;
 
 public abstract class Facility {
+    private String serviceCode;
     private String serviceName;
-    private double usableArea;
-    private double rentalCosts;
+    private String usableArea;
+    private String rentalCosts;
     private int maximumPeople;
-    private int rentalType;
+    private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, double usableArea, double rentalCosts, int maximumPeople, int rentalType) {
+    public Facility(String serviceCode, String serviceName, String usableArea, String rentalCosts, int maximumPeople, String rentalType) {
+        this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
         this.maximumPeople = maximumPeople;
         this.rentalType = rentalType;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {
@@ -26,19 +36,19 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public double getUsableArea() {
+    public String getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(double usableArea) {
+    public void setUsableArea(String usableArea) {
         this.usableArea = usableArea;
     }
 
-    public double getRentalCosts() {
+    public String getRentalCosts() {
         return rentalCosts;
     }
 
-    public void setRentalCosts(double rentalCosts) {
+    public void setRentalCosts(String rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
@@ -50,17 +60,17 @@ public abstract class Facility {
         this.maximumPeople = maximumPeople;
     }
 
-    public int getRentalType() {
+    public String getRentalType() {
         return rentalType;
     }
 
-    public void setRentalType(int rentalType) {
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
     @Override
     public String toString() {
-        return
+        return  "serviceCode = "+ serviceCode+
                 "serviceName = " + serviceName +
                 ", usableArea = " + usableArea +
                 ", rentalCosts = " + rentalCosts +
