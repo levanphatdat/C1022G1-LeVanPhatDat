@@ -66,13 +66,13 @@ public class FacilityRepository implements IFacilityRepository {
     @Override
     public void displayMaintenance() {
         for (Map.Entry<Room, Integer> roomIntegerEntry : roomMap.entrySet()) {
-            if (roomIntegerEntry.getValue() > 4) {
+            if (roomIntegerEntry.getValue() > 5) {
                 System.out.println(roomIntegerEntry.getKey());
                 System.out.println("Number of times used is " + roomIntegerEntry.getValue());
             }
         }
         for (Map.Entry<Villa, Integer> villaIntegerEntry : villaMap.entrySet()) {
-            if ((villaIntegerEntry.getValue() > 4)) {
+            if ((villaIntegerEntry.getValue() > 5)) {
                 System.out.println(villaIntegerEntry.getKey());
                 System.out.println("Number of times used is " + villaIntegerEntry.getValue());
             }

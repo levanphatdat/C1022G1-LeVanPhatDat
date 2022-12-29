@@ -88,8 +88,7 @@ public class FacilityManagementController {
                                 }
                                 break;
                             case 3:
-                                FacilityManagementController facilityManagementController = new FacilityManagementController();
-                                facilityManagementController.facilityManagement();
+                                facilityManagement();
                                 break;
                             default:
                                 System.out.println("You choose wrong. Please choose again");
