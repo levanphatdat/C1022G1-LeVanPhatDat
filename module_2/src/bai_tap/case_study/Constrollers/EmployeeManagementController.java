@@ -104,8 +104,7 @@ public class EmployeeManagementController {
                     }
                     break;
                 case 5:
-                    FuramaController furamaController = new FuramaController();
-                    furamaController.displayMainMenu();
+                    FuramaController.displayMainMenu();
                     break;
                 default:
                     System.out.println("You choose wrong. Please choose again");
