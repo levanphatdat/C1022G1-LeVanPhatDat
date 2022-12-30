@@ -3,6 +3,7 @@ package bai_tap.case_study.Constrollers;
 import bai_tap.case_study.Models.Person.Employee;
 import bai_tap.case_study.Services.EmployeeService.IEmployeeService;
 import bai_tap.case_study.Services.EmployeeService.EmployeeService;
+import bai_tap.case_study.Ultis.RegexCode;
 
 import java.util.Scanner;
 
@@ -25,28 +26,124 @@ public class EmployeeManagementController {
                     iEmployeeService.display();
                     break;
                 case 2:
-                    System.out.println("Enter the id : ");
-                    String addID = scanner.nextLine();
+                    String addID;
+                    do {
+                        System.out.println("Enter the id : ");
+                        addID = scanner.nextLine();
+                    } while (!RegexCode.checkEmployeeID(addID));
                     Employee employee3 = iEmployeeService.checkID(addID);
                     if (employee3 == null) {
-                        System.out.println("Enter the name : ");
-                        String addName = scanner.nextLine();
-                        System.out.println("Enter the day of birth : ");
-                        String addBirth = scanner.nextLine();
-                        System.out.println("Enter the gender : ");
-                        String addGender = scanner.nextLine();
-                        System.out.println("Enter the identity code : ");
-                        String addIdentity = scanner.nextLine();
-                        System.out.println("Enter the phone number : ");
-                        String addPhone = scanner.nextLine();
-                        System.out.println("Enter the email : ");
-                        String addEmail = scanner.nextLine();
-                        System.out.println("Enter the qualification : ");
-                        String addQualification = scanner.nextLine();
-                        System.out.println("Enter the position : ");
-                        String addPosition = scanner.nextLine();
-                        System.out.println("Enter the salary : ");
-                        String addSalary = scanner.nextLine();
+                        String addName;
+                        do {
+                            System.out.println("Enter the name : ");
+                            addName = scanner.nextLine();
+                        } while (!RegexCode.checkName(addName));
+
+                        String addBirth;
+                        do {
+                            System.out.println("Enter the day of birth : ");
+                            addBirth = scanner.nextLine();
+                        } while (!RegexCode.checkDateOfBirth(addBirth));
+
+                        String addGender = "";
+                        System.out.println("Enter the gender : \n" +
+                                "1. Male\n" +
+                                "2. Female\n" +
+                                "Enter you choice : ");
+                        int choiceG = Integer.parseInt(scanner.nextLine());
+                        switch (choiceG) {
+                            case 1:
+                                addGender = "Male";
+                                break;
+                            case 2:
+                                addGender = "Female";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String addIdentity;
+                        do {
+                            System.out.println("Enter the identity code : ");
+                            addIdentity = scanner.nextLine();
+                        } while (!RegexCode.checkIdentityCode(addIdentity));
+
+                        String addPhone;
+                        do {
+                            System.out.println("Enter the phone number : ");
+                            addPhone = scanner.nextLine();
+                        } while (!RegexCode.checkPhoneNumber(addPhone));
+
+                        String addEmail;
+                        do {
+                            System.out.println("Enter the email : ");
+                            addEmail = scanner.nextLine();
+                        } while (!RegexCode.checkEmail(addEmail));
+
+                        String addQualification = "";
+                        System.out.println("Enter the qualification :\n" +
+                                "1. Intermediate\n" +
+                                "2. College\n" +
+                                "3. University\n" +
+                                "4. After University\n" +
+                                "Enter your choice : ");
+                        int choiceQ = Integer.parseInt(scanner.nextLine());
+                        switch (choiceQ) {
+                            case 1:
+                                addQualification = "Intermediate";
+                                break;
+                            case 2:
+                                addQualification = "College";
+                                break;
+                            case 3:
+                                addQualification = "University";
+                                break;
+                            case 4:
+                                addQualification = "After University";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String addPosition = "";
+                        System.out.println("Enter the position : \n" +
+                                "1. Receptionist\n" +
+                                "2. Staff\n" +
+                                "3. Specialist \n" +
+                                "4. Supervisory \n" +
+                                "5. Manager\n" +
+                                "6. President\n" +
+                                "Enter your choice : ");
+                        int choiceP = Integer.parseInt(scanner.nextLine());
+                        switch (choiceP) {
+                            case 1:
+                                addPosition = "Receptionist";
+                                break;
+                            case 2:
+                                addPosition = "Staff";
+                                break;
+                            case 3:
+                                addPosition = "Specialist";
+                                break;
+                            case 4:
+                                addPosition = "Supervisory";
+                                break;
+                            case 5:
+                                addPosition = "Manager";
+                                break;
+                            case 6:
+                                addPosition = "President";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String addSalary = "";
+                        do {
+                            System.out.println("Enter the salary : ");
+                            addSalary = scanner.nextLine();
+                        } while (!RegexCode.checkRentalCost(addSalary));
+
                         Employee employee = new Employee(addID, addName, addBirth, addGender, addIdentity, addPhone, addEmail, addQualification, addPosition, addSalary);
                         iEmployeeService.add(employee);
                     } else {
@@ -70,24 +167,116 @@ public class EmployeeManagementController {
                     String editID = scanner.nextLine();
                     Employee employee2 = iEmployeeService.checkID(editID);
                     if (employee2 != null) {
-                        System.out.println("Enter the name : ");
-                        String editName = scanner.nextLine();
-                        System.out.println("Enter the day of birth : ");
-                        String editBirth = scanner.nextLine();
-                        System.out.println("Enter the gender : ");
-                        String editGender = scanner.nextLine();
-                        System.out.println("Enter the identity code : ");
-                        String editIdentity = scanner.nextLine();
-                        System.out.println("Enter the phone number : ");
-                        String editPhone = scanner.nextLine();
-                        System.out.println("Enter the email : ");
-                        String editEmail = scanner.nextLine();
-                        System.out.println("Enter the qualification : ");
-                        String editQualification = scanner.nextLine();
-                        System.out.println("Enter the position : ");
-                        String editPosition = scanner.nextLine();
-                        System.out.println("Enter the salary : ");
-                        String editSalary = scanner.nextLine();
+                        String editName;
+                        do {
+                            System.out.println("Enter the name : ");
+                            editName = scanner.nextLine();
+                        } while (!RegexCode.checkName(editName));
+
+                        String editBirth;
+                        do {
+                            System.out.println("Enter the day of birth : ");
+                            editBirth = scanner.nextLine();
+                        } while (!RegexCode.checkDateOfBirth(editBirth));
+
+                        String editGender = "";
+                        System.out.println("Enter the gender : \n" +
+                                "1. Male\n" +
+                                "2. Female\n" +
+                                "Enter you choice : ");
+                        int choiceG = Integer.parseInt(scanner.nextLine());
+                        switch (choiceG) {
+                            case 1:
+                                editGender = "Male";
+                                break;
+                            case 2:
+                                editGender = "Female";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String editIdentity;
+                        do {
+                            System.out.println("Enter the identity code : ");
+                            editIdentity = scanner.nextLine();
+                        } while (!RegexCode.checkIdentityCode(editIdentity));
+
+                        String editPhone;
+                        do {
+                            System.out.println("Enter the phone number : ");
+                            editPhone = scanner.nextLine();
+                        } while (!RegexCode.checkPhoneNumber(editPhone));
+
+                        String editEmail;
+                        do {
+                            System.out.println("Enter the email : ");
+                            editEmail = scanner.nextLine();
+                        } while (!RegexCode.checkEmail(editEmail));
+
+                        String editQualification = "";
+                        System.out.println("Enter the qualification :\n" +
+                                "1. Intermediate\n" +
+                                "2. College\n" +
+                                "3. University\n" +
+                                "4. After University\n" +
+                                "Enter your choice : ");
+                        int choiceQ = Integer.parseInt(scanner.nextLine());
+                        switch (choiceQ) {
+                            case 1:
+                                editQualification = "Intermediate";
+                                break;
+                            case 2:
+                                editQualification = "College";
+                                break;
+                            case 3:
+                                editQualification = "University";
+                                break;
+                            case 4:
+                                editQualification = "After University";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String editPosition = "";
+                        System.out.println("Enter the position : \n" +
+                                "1. Receptionist\n" +
+                                "2. Staff\n" +
+                                "3. Specialist \n" +
+                                "4. Supervisory \n" +
+                                "5. Manager\n" +
+                                "6. President\n" +
+                                "Enter your choice : ");
+                        int choiceP = Integer.parseInt(scanner.nextLine());
+                        switch (choiceP) {
+                            case 1:
+                                editPosition = "Receptionist";
+                                break;
+                            case 2:
+                                editPosition = "Staff";
+                                break;
+                            case 3:
+                                editPosition = "Specialist";
+                                break;
+                            case 4:
+                                editPosition = "Supervisory";
+                                break;
+                            case 5:
+                                editPosition = "Manager";
+                                break;
+                            case 6:
+                                editPosition = "President";
+                                break;
+                            default:
+                                System.out.println("Please choice again.");
+                        }
+
+                        String editSalary;
+                        do {
+                            System.out.println("Enter the salary : ");
+                            editSalary = scanner.nextLine();
+                        } while (!RegexCode.checkRentalCost(editSalary));
                         employee2.setName(editName);
                         employee2.setDayOfBirth(editBirth);
                         employee2.setGender(editGender);

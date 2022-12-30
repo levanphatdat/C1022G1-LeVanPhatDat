@@ -5,13 +5,13 @@ public abstract class Facility {
     private String serviceName;
     private String usableArea;
     private String rentalCosts;
-    private int maximumPeople;
+    private String maximumPeople;
     private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String serviceCode, String serviceName, String usableArea, String rentalCosts, int maximumPeople, String rentalType) {
+    public Facility(String serviceCode, String serviceName, String usableArea, String rentalCosts, String maximumPeople, String rentalType) {
         this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
@@ -52,11 +52,11 @@ public abstract class Facility {
         this.rentalCosts = rentalCosts;
     }
 
-    public int getMaximumPeople() {
+    public String getMaximumPeople() {
         return maximumPeople;
     }
 
-    public void setMaximumPeople(int maximumPeople) {
+    public void setMaximumPeople(String maximumPeople) {
         this.maximumPeople = maximumPeople;
     }
 

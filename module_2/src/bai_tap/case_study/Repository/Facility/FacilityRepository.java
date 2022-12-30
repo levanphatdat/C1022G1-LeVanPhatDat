@@ -11,13 +11,13 @@ public class FacilityRepository implements IFacilityRepository {
     public static Map<Villa, Integer> villaMap = new LinkedHashMap<>();
 
     static {
-        roomMap.put(new Room("SVRO-0001", "Room 1", "100m2", "1000000", 3, "3 months", "Breakfast"), 1);
-        roomMap.put(new Room("SVRO-0002", "Room 2", "120m2", "1100000", 4, "6 days", "Breakfast"), 5);
-        roomMap.put(new Room("SVRO-0003", "Room 3", "100m2", "1000000", 3, "1 month", "Breakfast"), 3);
+        roomMap.put(new Room("SVRO-0001", "Room 1", "100m2", "1000000", "3", "3 months", "Breakfast"), 1);
+        roomMap.put(new Room("SVRO-0002", "Room 2", "120m2", "1100000", "4", "6 days", "Breakfast"), 5);
+        roomMap.put(new Room("SVRO-0003", "Room 3", "100m2", "1000000", "3", "1 month", "Breakfast"), 3);
 
-        villaMap.put(new Villa("SVVL-0001", "Villa 1", "200m2", "4500000", 4, "1 month", "4 start", "120m2", 3), 2);
-        villaMap.put(new Villa("SVVL-0002", "Villa 2", "200m2", "4500000", 4, "1 month", "4 start", "120m2", 3), 2);
-        villaMap.put(new Villa("SVVL-0003", "Villa 3", "300m2", "6000000", 6, "5 days", "4.5 start", "150m2", 3), 6);
+        villaMap.put(new Villa("SVVL-0001", "Villa 1", "200m2", "4500000", "4", "1 month", "4 start", "120m2", "3"), 2);
+        villaMap.put(new Villa("SVVL-0002", "Villa 2", "200m2", "4500000", "4", "1 month", "4 start", "120m2", "3"), 2);
+        villaMap.put(new Villa("SVVL-0003", "Villa 3", "300m2", "6000000", "6", "5 days", "4.5 start", "150m2", "3"), 6);
     }
 
     @Override
@@ -66,13 +66,13 @@ public class FacilityRepository implements IFacilityRepository {
     @Override
     public void displayMaintenance() {
         for (Map.Entry<Room, Integer> roomIntegerEntry : roomMap.entrySet()) {
-            if (roomIntegerEntry.getValue() > 5) {
+            if (roomIntegerEntry.getValue() >= 5) {
                 System.out.println(roomIntegerEntry.getKey());
                 System.out.println("Number of times used is " + roomIntegerEntry.getValue());
             }
         }
         for (Map.Entry<Villa, Integer> villaIntegerEntry : villaMap.entrySet()) {
-            if ((villaIntegerEntry.getValue() > 5)) {
+            if ((villaIntegerEntry.getValue() >= 5)) {
                 System.out.println(villaIntegerEntry.getKey());
                 System.out.println("Number of times used is " + villaIntegerEntry.getValue());
             }

@@ -3,12 +3,12 @@ package bai_tap.case_study.Models.Facility;
 public class Villa extends Facility {
     private String roomStandard;
     private String poolArea;
-    private int floors;
+    private String floors;
 
     public Villa() {
     }
 
-    public Villa(String serviceCode, String serviceName, String usableArea, String rentalCosts, int maximumPeople, String rentalType, String roomStandard, String poolArea, int floors) {
+    public Villa(String serviceCode, String serviceName, String usableArea, String rentalCosts, String maximumPeople, String rentalType, String roomStandard, String poolArea, String floors) {
         super(serviceCode, serviceName, usableArea, rentalCosts, maximumPeople, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
@@ -31,11 +31,11 @@ public class Villa extends Facility {
         this.poolArea = poolArea;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 
