@@ -2,8 +2,8 @@ package bai_tap.case_study.Services.FacilityService;
 
 import bai_tap.case_study.Models.Facility.Room;
 import bai_tap.case_study.Models.Facility.Villa;
-import bai_tap.case_study.Repository.Facility.FacilityRepository;
-import bai_tap.case_study.Repository.Facility.IFacilityRepository;
+import bai_tap.case_study.Repository.FacilityRepository.FacilityRepository;
+import bai_tap.case_study.Repository.FacilityRepository.IFacilityRepository;
 
 public class FacilityService implements IFacilityService {
     IFacilityRepository iFacilityRepository = new FacilityRepository();

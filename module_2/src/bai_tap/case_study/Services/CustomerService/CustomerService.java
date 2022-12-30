@@ -1,8 +1,8 @@
 package bai_tap.case_study.Services.CustomerService;
 
 import bai_tap.case_study.Models.Person.Customer;
-import bai_tap.case_study.Repository.Customer.CustomerRepository;
-import bai_tap.case_study.Repository.Customer.ICustomerRepository;
+import bai_tap.case_study.Repository.CustomerRepository.CustomerRepository;
+import bai_tap.case_study.Repository.CustomerRepository.ICustomerRepository;
 
 public class CustomerService implements ICustomerService {
     ICustomerRepository iCustomerRepository =new CustomerRepository();

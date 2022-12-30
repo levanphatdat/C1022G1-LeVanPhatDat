@@ -1,4 +1,4 @@
-package bai_tap.case_study.Ultis;
+package bai_tap;
 
 public class TestRegex {
     //   KH-XXXX

@@ -1,4 +1,4 @@
-package bai_tap.case_study.Repository.Facility;
+package bai_tap.case_study.Repository.FacilityRepository;
 
 import bai_tap.case_study.Models.Facility.Room;
 import bai_tap.case_study.Models.Facility.Villa;

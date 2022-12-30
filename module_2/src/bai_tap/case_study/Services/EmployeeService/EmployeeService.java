@@ -1,8 +1,8 @@
 package bai_tap.case_study.Services.EmployeeService;
 
 import bai_tap.case_study.Models.Person.Employee;
-import bai_tap.case_study.Repository.Employee.IEmployeeRepository;
-import bai_tap.case_study.Repository.Employee.EmployeeRepository;
+import bai_tap.case_study.Repository.EmployeeRepository.IEmployeeRepository;
+import bai_tap.case_study.Repository.EmployeeRepository.EmployeeRepository;
 
 public class EmployeeService implements IEmployeeService {
     IEmployeeRepository iEmployeeRepository = new EmployeeRepository();

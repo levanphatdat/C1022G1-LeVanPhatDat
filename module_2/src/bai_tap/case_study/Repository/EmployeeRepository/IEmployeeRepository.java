@@ -1,4 +1,4 @@
-package bai_tap.case_study.Repository.Employee;
+package bai_tap.case_study.Repository.EmployeeRepository;
 
 import bai_tap.case_study.Models.Person.Employee;
 
