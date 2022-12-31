@@ -54,6 +54,6 @@ public class EmployeeRepository implements IEmployeeRepository {
                 employees.set(i, employee);
             }
         }
-        readWriteEmployee.writeEmployee(employees);
+        readWriteEmployee.writeEmployee(employeeList);
     }
 }

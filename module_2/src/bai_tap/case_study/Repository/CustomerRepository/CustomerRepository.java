@@ -1,21 +1,20 @@
 package bai_tap.case_study.Repository.CustomerRepository;
 
+import bai_tap.case_study.Data.ReadWriteCustomer;
 import bai_tap.case_study.Models.Person.Customer;
+
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class CustomerRepository implements ICustomerRepository{
-    public static List<Customer> customerList= new LinkedList<>();
-    static {
-        customerList.add(new Customer("KH-1","Mr.Dat","27/09/1999","male","191612354","0985123547","dathhi@gmail.com","Diamond","Hue"));
-        customerList.add(new Customer("KH-2","Mrs.Hi","01/12/1999","female","191958263","0981125485","cobengoknnghek@gmail.com","Member","Hue"));
-        customerList.add(new Customer("KH-3","Mr.Minh","15/06/1985","male","191256484","0981255552","chubedan@gmail.com","Gold","Da Nang"));
-    }
+public class CustomerRepository implements ICustomerRepository {
+    public static List<Customer> customerList = new LinkedList<>();
+    ReadWriteCustomer readWriteCustomer = new ReadWriteCustomer();
 
     @Override
     public void display() {
-        for (Customer customer:customerList){
+        List<Customer> customers = readWriteCustomer.readCustomer();
+        for (Customer customer : customers) {
             System.out.println(customer);
         }
     }
@@ -23,21 +22,25 @@ public class CustomerRepository implements ICustomerRepository{
     @Override
     public void add(Customer customer) {
         customerList.add(customer);
+        readWriteCustomer.writeAppendCustomer(customerList);
     }
 
     @Override
     public void edit(Customer customer) {
-        for (int i = 0; i < customerList.size(); i++) {
-            if (customer.getId().equals(customerList.get(i).getId())){
-                customerList.set(i,customer);
+        List<Customer> customers = readWriteCustomer.readCustomer();
+        for (int i = 0; i < customers.size(); i++) {
+            if (customers.get(i).getId().equals(customer.getId())) {
+                customers.set(i, customer);
             }
         }
+        readWriteCustomer.writeCustomer(customerList);
     }
 
     @Override
     public Customer checkID(String id) {
-        for (Customer customer: customerList){
-            if (customer.getId().equals(id)){
+        List<Customer> customers = readWriteCustomer.readCustomer();
+        for (Customer customer : customers) {
+            if (customer.getId().equals(id)) {
                 return customer;
             }
         }
