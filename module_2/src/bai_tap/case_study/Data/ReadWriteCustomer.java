@@ -3,7 +3,6 @@ package bai_tap.case_study.Data;
 import bai_tap.case_study.Models.Person.Customer;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
