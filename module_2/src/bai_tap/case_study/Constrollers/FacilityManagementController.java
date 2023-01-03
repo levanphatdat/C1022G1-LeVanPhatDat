@@ -6,6 +6,7 @@ import bai_tap.case_study.Services.FacilityService.FacilityService;
 import bai_tap.case_study.Services.FacilityService.IFacilityService;
 import bai_tap.case_study.Ultis.RegexCode;
 
+
 import java.util.Scanner;
 
 public class FacilityManagementController {
@@ -20,7 +21,13 @@ public class FacilityManagementController {
                     "4\tReturn main menu\n" +
                     "-----------------------------\n" +
                     "Enter your choice : ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = -1;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+            } catch (NumberFormatException e) {
+                System.err.println("Enter choice again ");
+            }
             switch (choice) {
                 case 1:
                     iFacilityService.display();
@@ -32,7 +39,13 @@ public class FacilityManagementController {
                                 "3.\tBack to menu\n" +
                                 "--------------------------\n" +
                                 "Enter your choice : ");
-                        int choice1 = Integer.parseInt(scanner.nextLine());
+                        int choice1 = -1;
+                        try {
+                            choice1 = Integer.parseInt(scanner.nextLine());
+
+                        } catch (NumberFormatException e) {
+                            System.err.println("Enter choice again ");
+                        }
                         switch (choice1) {
                             case 1:
                                 System.out.println("Add New Villa : ");
@@ -147,9 +160,7 @@ public class FacilityManagementController {
                     iFacilityService.displayMaintenance();
                     break;
                 case 4:
-                    FuramaController furamaController = new FuramaController();
-                    furamaController.displayMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }

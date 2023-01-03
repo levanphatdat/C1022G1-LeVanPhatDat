@@ -34,7 +34,7 @@ public class ReadWriteVilla {
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("File Not Found");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

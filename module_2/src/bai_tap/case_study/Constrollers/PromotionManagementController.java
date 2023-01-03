@@ -12,16 +12,20 @@ public class PromotionManagementController {
                     "3.\tReturn main menu\n" +
                     "------------------------------\n" +
                     "Enter your choice : ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = -1;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+            } catch (NumberFormatException e) {
+                System.err.println("Enter choice again ");
+            }
             switch (choice) {
                 case 1:
                     break;
                 case 2:
                     break;
                 case 3:
-                    FuramaController furamaController = new FuramaController();
-                    furamaController.displayMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }

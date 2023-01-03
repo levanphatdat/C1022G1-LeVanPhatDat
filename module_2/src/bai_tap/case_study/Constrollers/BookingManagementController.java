@@ -1,13 +1,10 @@
 package bai_tap.case_study.Constrollers;
 
-import bai_tap.case_study.Services.BookingService.BookingService;
-import bai_tap.case_study.Services.BookingService.IBookingService;
-
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BookingManagementController {
-    public void bookingManagement() {
-        IBookingService iBookingService = new BookingService();
+    public void bookingManagement()  {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("---- Booking Management ----\n" +
@@ -16,16 +13,20 @@ public class BookingManagementController {
                     "3.\tReturn main menu\n" +
                     "-----------------------------\n" +
                     "Enter you choice : ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = -1;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+            } catch (NumberFormatException e) {
+                System.err.println("Enter choice again ");
+            }
             switch (choice) {
                 case 1:
                     break;
                 case 2:
                     break;
                 case 3:
-                    FuramaController furamaController = new FuramaController();
-                    furamaController.displayMainMenu();
-                    break;
+                    return;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }

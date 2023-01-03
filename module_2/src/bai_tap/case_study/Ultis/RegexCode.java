@@ -17,9 +17,28 @@ public class RegexCode {
     private static final String REGEX_IDENTITY_CODE = "^([\\d]{9}|[\\d]{12})$";
     private static final String REGEX_PHONE_NUMBER = "^09\\d{8}$";
     private static final String REGEX_EMAIL = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
-    private static final String REGEX_ROOM="^SVRO-\\d{4}$";
-    private static final String REGEX_VILLA="^SVVL-\\d{4}$";
+    private static final String REGEX_ROOM = "^SVRO-\\d{4}$";
+    private static final String REGEX_VILLA = "^SVVL-\\d{4}$";
+    private static final String REGEX_GENDER = "^Male|Female|Other Gender$";
+    private static final String REGEX_TYPE_OF_GUEST="^Diamond|Platinum|Gold|Silver|Member$";
+    private static final String REGEX_QUALIFICATION="^Intermediate|College|University|After University$";
+    private static final String REGEX_POSITION="^Receptionist|Staff|Specialist|Supervisory|Manager|President$";
 
+    public static boolean checkPosition(String string){
+        return string.matches(REGEX_POSITION);
+    }
+
+    public static boolean checkQualification(String string){
+        return string.matches(REGEX_QUALIFICATION);
+    }
+
+    public static boolean checkTypeOfGuest(String string){
+        return string.matches(REGEX_TYPE_OF_GUEST);
+    }
+
+    public static boolean checkGender(String string) {
+        return string.matches(REGEX_GENDER);
+    }
 
     public static boolean checkCustomerID(String string) {
         return string.matches(REGEX_CUSTOMER_ID);
@@ -64,10 +83,12 @@ public class RegexCode {
     public static boolean checkEmail(String string) {
         return string.matches(REGEX_EMAIL);
     }
-    public static boolean checkRoom(String s){
+
+    public static boolean checkRoom(String s) {
         return s.matches(REGEX_ROOM);
     }
-    public static boolean checkVilla(String s){
+
+    public static boolean checkVilla(String s) {
         return s.matches(REGEX_VILLA);
     }
 }

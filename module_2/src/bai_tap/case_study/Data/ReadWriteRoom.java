@@ -32,7 +32,7 @@ public class ReadWriteRoom {
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("File Not Found");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

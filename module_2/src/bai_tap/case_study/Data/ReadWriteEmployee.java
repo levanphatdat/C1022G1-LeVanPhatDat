@@ -34,7 +34,7 @@ public class ReadWriteEmployee {
                 employeeList.add(employee);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("File Not Found");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -54,7 +54,7 @@ public class ReadWriteEmployee {
             for (Employee employee1 : employee) {
                 bufferedWriter.write(employee1.getId() + "," + employee1.getName() + "," + employee1.getDayOfBirth() + "," + employee1.getGender()
                         + "," + employee1.getIdentityCard() + "," + employee1.getPhoneNumber() + "," + employee1.getEmail() + "," + employee1.getQualifications()
-                        + "," + employee1.getPosition() + "," + employee1.getSalary()+"\n");
+                        + "," + employee1.getPosition() + "," + employee1.getSalary() + "\n");
             }
             bufferedWriter.flush();
         } catch (IOException e) {
@@ -68,14 +68,15 @@ public class ReadWriteEmployee {
         }
 
     }
+
     public void writeAppendEmployee(List<Employee> employee) {
         BufferedWriter bufferedWriter = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(EMPLOYEE_CSV,true));
+            bufferedWriter = new BufferedWriter(new FileWriter(EMPLOYEE_CSV, true));
             for (Employee employee1 : employee) {
                 bufferedWriter.write(employee1.getId() + "," + employee1.getName() + "," + employee1.getDayOfBirth() + "," + employee1.getGender()
                         + "," + employee1.getIdentityCard() + "," + employee1.getPhoneNumber() + "," + employee1.getEmail() + "," + employee1.getQualifications()
-                        + "," + employee1.getPosition() + "," + employee1.getSalary());
+                        + "," + employee1.getPosition() + "," + employee1.getSalary() + "\n");
             }
             bufferedWriter.flush();
         } catch (IOException e) {

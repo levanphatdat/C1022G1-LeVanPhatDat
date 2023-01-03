@@ -5,6 +5,7 @@ import bai_tap.case_study.Services.CustomerService.CustomerService;
 import bai_tap.case_study.Services.CustomerService.ICustomerService;
 import bai_tap.case_study.Ultis.RegexCode;
 
+
 import java.util.Scanner;
 
 public class CustomerManagementController {
@@ -19,7 +20,13 @@ public class CustomerManagementController {
                     "4.\tReturn main menu\n" +
                     "--------------------------------\n" +
                     "Enter your choice : ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = -1;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+            } catch (NumberFormatException e) {
+                System.err.println("Enter choice again ");
+            }
             switch (choice) {
                 case 1:
                     iCustomerService.display();
@@ -45,21 +52,32 @@ public class CustomerManagementController {
                         } while (!RegexCode.checkDateOfBirth(addBirth));
 
                         String addGender = "";
-                        System.out.println("Enter the gender : \n" +
-                                "1. Male\n" +
-                                "2. Female\n" +
-                                "Enter you choice : ");
-                        int choiceG = Integer.parseInt(scanner.nextLine());
-                        switch (choiceG) {
-                            case 1:
-                                addGender = "Male";
-                                break;
-                            case 2:
-                                addGender = "Female";
-                                break;
-                            default:
-                                System.out.println("Please choice again.");
-                        }
+
+                        do {
+                            System.out.println("Enter the gender : \n" +
+                                    "1. Male\n" +
+                                    "2. Female\n" +
+                                    "3. Other Gender\n" +
+                                    "Enter you choice : ");
+                            int choiceG = -1;
+                            try {
+                                choiceG = Integer.parseInt(scanner.nextLine());
+
+                            } catch (NumberFormatException e) {
+                                System.err.println("Enter choice again ");
+                            }
+                            switch (choiceG) {
+                                case 1:
+                                    addGender = "Male";
+                                    break;
+                                case 2:
+                                    addGender = "Female";
+                                    break;
+                                case 3:
+                                    addGender = "Other Gender";
+                                    break;
+                            }
+                        } while (!RegexCode.checkGender(addGender));
 
                         String addIdentity;
                         do {
@@ -80,33 +98,40 @@ public class CustomerManagementController {
                         } while (!RegexCode.checkEmail(addEmail));
 
                         String addTypeOfGuest = "";
-                        System.out.println("Enter the type of guest : \n" +
-                                "1. Diamond\n" +
-                                "2. Platinum\n" +
-                                "3. Gold\n" +
-                                "4. Silver\n" +
-                                "5. Member\n" +
-                                "Enter your choice : ");
-                        int choiceTypeOfGuest = Integer.parseInt(scanner.nextLine());
-                        switch (choiceTypeOfGuest) {
-                            case 1:
-                                addTypeOfGuest = "Diamond";
-                                break;
-                            case 2:
-                                addTypeOfGuest = "Platinum";
-                                break;
-                            case 3:
-                                addTypeOfGuest = "Gold";
-                                break;
-                            case 4:
-                                addTypeOfGuest = "Silver";
-                                break;
-                            case 5:
-                                addTypeOfGuest = "Member";
-                                break;
-                            default:
-                                System.out.println("Please choice again.");
-                        }
+
+                        do {
+                            System.out.println("Enter the type of guest : \n" +
+                                    "1. Diamond\n" +
+                                    "2. Platinum\n" +
+                                    "3. Gold\n" +
+                                    "4. Silver\n" +
+                                    "5. Member\n" +
+                                    "Enter your choice : ");
+                            int choiceTypeOfGuest = -1;
+                            try {
+                                choiceTypeOfGuest = Integer.parseInt(scanner.nextLine());
+
+                            } catch (NumberFormatException e) {
+                                System.err.println("Enter choice again ");
+                            }
+                            switch (choiceTypeOfGuest) {
+                                case 1:
+                                    addTypeOfGuest = "Diamond";
+                                    break;
+                                case 2:
+                                    addTypeOfGuest = "Platinum";
+                                    break;
+                                case 3:
+                                    addTypeOfGuest = "Gold";
+                                    break;
+                                case 4:
+                                    addTypeOfGuest = "Silver";
+                                    break;
+                                case 5:
+                                    addTypeOfGuest = "Member";
+                                    break;
+                            }
+                        } while (!RegexCode.checkTypeOfGuest(addTypeOfGuest));
 
                         System.out.println("Enter the address : ");
                         String addAddress = scanner.nextLine();
@@ -139,21 +164,31 @@ public class CustomerManagementController {
                         } while (!RegexCode.checkDateOfBirth(editBirth));
 
                         String editGender = "";
-                        System.out.println("Enter the gender : \n" +
-                                "1. Male\n" +
-                                "2. Female\n" +
-                                "Enter you choice : ");
-                        int choiceG = Integer.parseInt(scanner.nextLine());
-                        switch (choiceG) {
-                            case 1:
-                                editGender = "Male";
-                                break;
-                            case 2:
-                                editGender = "Female";
-                                break;
-                            default:
-                                System.out.println("Please choice again.");
-                        }
+                        do {
+                            System.out.println("Enter the gender : \n" +
+                                    "1. Male\n" +
+                                    "2. Female\n" +
+                                    "3. Other Gender\n" +
+                                    "Enter you choice : ");
+                            int choiceG = -1;
+                            try {
+                                choiceG = Integer.parseInt(scanner.nextLine());
+
+                            } catch (NumberFormatException e) {
+                                System.err.println("Enter choice again ");
+                            }
+                            switch (choiceG) {
+                                case 1:
+                                    editGender = "Male";
+                                    break;
+                                case 2:
+                                    editGender = "Female";
+                                    break;
+                                case 3:
+                                    editGender = "Other Gender";
+                                    break;
+                            }
+                        } while (!RegexCode.checkGender(editGender));
 
                         String editIdentity;
                         do {
@@ -174,33 +209,39 @@ public class CustomerManagementController {
                         } while (!RegexCode.checkEmail(editEmail));
 
                         String editTypeOfGuest = "";
-                        System.out.println("Enter the type of guest : \n" +
-                                "1. Diamond\n" +
-                                "2. Platinum\n" +
-                                "3. Gold\n" +
-                                "4. Silver\n" +
-                                "5. Member\n" +
-                                "Enter your choice : ");
-                        int choiceTypeOfGuest = Integer.parseInt(scanner.nextLine());
-                        switch (choiceTypeOfGuest) {
-                            case 1:
-                                editTypeOfGuest = "Diamond";
-                                break;
-                            case 2:
-                                editTypeOfGuest = "Platinum";
-                                break;
-                            case 3:
-                                editTypeOfGuest = "Gold";
-                                break;
-                            case 4:
-                                editTypeOfGuest = "Silver";
-                                break;
-                            case 5:
-                                editTypeOfGuest = "Member";
-                                break;
-                            default:
-                                System.out.println("Please choice again.");
-                        }
+                        do {
+                            System.out.println("Enter the type of guest : \n" +
+                                    "1. Diamond\n" +
+                                    "2. Platinum\n" +
+                                    "3. Gold\n" +
+                                    "4. Silver\n" +
+                                    "5. Member\n" +
+                                    "Enter your choice : ");
+                            int choiceTypeOfGuest = -1;
+                            try {
+                                choiceTypeOfGuest = Integer.parseInt(scanner.nextLine());
+
+                            } catch (NumberFormatException e) {
+                                System.err.println("Enter choice again ");
+                            }
+                            switch (choiceTypeOfGuest) {
+                                case 1:
+                                    editTypeOfGuest = "Diamond";
+                                    break;
+                                case 2:
+                                    editTypeOfGuest = "Platinum";
+                                    break;
+                                case 3:
+                                    editTypeOfGuest = "Gold";
+                                    break;
+                                case 4:
+                                    editTypeOfGuest = "Silver";
+                                    break;
+                                case 5:
+                                    editTypeOfGuest = "Member";
+                                    break;
+                            }
+                        } while (!RegexCode.checkTypeOfGuest(editTypeOfGuest));
 
                         System.out.println("Enter the address : ");
                         String editAddress = scanner.nextLine();
@@ -219,9 +260,7 @@ public class CustomerManagementController {
                     }
                     break;
                 case 4:
-                    FuramaController furamaController = new FuramaController();
-                    furamaController.displayMainMenu();
-                    break;
+                   return;
                 default:
                     System.out.println("You choose wrong. Please choose again");
             }
