@@ -51,8 +51,8 @@ public class FuramaController {
                         System.out.println("Enter choice again");
                 }
             } while (true);
-        } catch (NumberFormatException e) {
-            System.err.println("Enter number again !!!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

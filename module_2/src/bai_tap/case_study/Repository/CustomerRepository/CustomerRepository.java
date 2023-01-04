@@ -13,8 +13,8 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public void display() {
-        List<Customer> customers = readWriteCustomer.readCustomer();
-        for (Customer customer : customers) {
+        customerList = readWriteCustomer.readCustomer();
+        for (Customer customer : customerList) {
             System.out.println(customer);
         }
     }
@@ -23,23 +23,23 @@ public class CustomerRepository implements ICustomerRepository {
     public void add(Customer customer) {
         customerList.add(customer);
         readWriteCustomer.writeAppendCustomer(customerList);
+        customerList.clear();
     }
 
     @Override
     public void edit(Customer customer) {
-        List<Customer> customers = readWriteCustomer.readCustomer();
-        for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getId().equals(customer.getId())) {
-                customers.set(i, customer);
+        customerList = readWriteCustomer.readCustomer();
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getId().equals(customer.getId())) {
+                customerList.set(i, customer);
             }
         }
-        readWriteCustomer.writeCustomer(customerList);
     }
 
     @Override
     public Customer checkID(String id) {
-        List<Customer> customers = readWriteCustomer.readCustomer();
-        for (Customer customer : customers) {
+        customerList = readWriteCustomer.readCustomer();
+        for (Customer customer : customerList) {
             if (customer.getId().equals(id)) {
                 return customer;
             }

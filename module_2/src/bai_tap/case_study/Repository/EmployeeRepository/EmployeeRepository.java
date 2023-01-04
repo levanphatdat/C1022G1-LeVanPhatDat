@@ -14,31 +14,31 @@ public class EmployeeRepository implements IEmployeeRepository {
     public void add(Employee employee) {
         employeeList.add(employee);
         readWriteEmployee.writeAppendEmployee(employeeList);
+        employeeList.clear();
     }
 
     @Override
     public void display() {
-        List<Employee> employees = readWriteEmployee.readEmployee();
-        for (Employee employee : employees) {
+        employeeList = readWriteEmployee.readEmployee();
+        for (Employee employee : employeeList) {
             System.out.println(employee);
         }
     }
 
     @Override
     public void delete(String id) {
-        List<Employee> employees = readWriteEmployee.readEmployee();
-        for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i).getId().equals(id)) {
-                employees.remove(employees.get(i));
+        employeeList = readWriteEmployee.readEmployee();
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(id)) {
+                employeeList.remove(employeeList.get(i));
             }
         }
-        readWriteEmployee.writeEmployee(employees);
     }
 
     @Override
     public Employee checkID(String id) {
-        List<Employee> employees = readWriteEmployee.readEmployee();
-        for (Employee employee : employees) {
+         employeeList = readWriteEmployee.readEmployee();
+        for (Employee employee : employeeList) {
             if (employee.getId().equals(id)) {
                 return employee;
             }
@@ -48,12 +48,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public void edit(Employee employee) {
-        List<Employee> employees = readWriteEmployee.readEmployee();
-        for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i).getId().equals(employee.getId())) {
-                employees.set(i, employee);
+         employeeList = readWriteEmployee.readEmployee();
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(employee.getId())) {
+                employeeList.set(i, employee);
             }
         }
-        readWriteEmployee.writeEmployee(employeeList);
     }
 }

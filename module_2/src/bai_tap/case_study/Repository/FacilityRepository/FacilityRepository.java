@@ -16,14 +16,14 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public void display() {
-        Map<Room, Integer> roomIntegerEntry = readWriteRoom.readRoom();
-        for (Map.Entry<Room, Integer> room : roomIntegerEntry.entrySet()) {
+        roomMap = readWriteRoom.readRoom();
+        for (Map.Entry<Room, Integer> room : roomMap.entrySet()) {
             System.out.println(room.getKey());
             System.out.println("Number of times used is " + room.getValue());
         }
         System.out.println();
-        Map<Villa, Integer> villaIntegerMap = readWriteVilla.readVilla();
-        for (Map.Entry<Villa, Integer> villa : villaIntegerMap.entrySet()) {
+        villaMap = readWriteVilla.readVilla();
+        for (Map.Entry<Villa, Integer> villa : villaMap.entrySet()) {
             System.out.println(villa.getKey());
             System.out.println("Number of times used is " + villa.getValue());
         }
@@ -33,18 +33,20 @@ public class FacilityRepository implements IFacilityRepository {
     public void addRoom(Room room, int num) {
         roomMap.put(room, num);
         readWriteRoom.writeRoom(roomMap);
+        roomMap.clear();
     }
 
     @Override
     public void addVilla(Villa villa, int num) {
         villaMap.put(villa, num);
         readWriteVilla.writeVilla(villaMap);
+        villaMap.clear();
     }
 
     @Override
     public boolean checkServiceCodeRoom(String string) {
-        Map<Room, Integer> roomIntegerEntry = readWriteRoom.readRoom();
-        for (Room room : roomIntegerEntry.keySet()) {
+        roomMap = readWriteRoom.readRoom();
+        for (Room room : roomMap.keySet()) {
             if (room.getServiceCode().equals(string)) {
                 return false;
             }
@@ -54,9 +56,8 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public boolean checkServiceCodeVilla(String string) {
-        Map<Villa, Integer> villaIntegerMap = readWriteVilla.readVilla();
-
-        for (Villa villa : villaIntegerMap.keySet()) {
+        villaMap = readWriteVilla.readVilla();
+        for (Villa villa : villaMap.keySet()) {
             if (villa.getServiceCode().equals(string)) {
                 return false;
             }
@@ -66,15 +67,15 @@ public class FacilityRepository implements IFacilityRepository {
 
     @Override
     public void displayMaintenance() {
-        Map<Room, Integer> roomEntry = readWriteRoom.readRoom();
-        for (Map.Entry<Room, Integer> roomIntegerEntry : roomEntry.entrySet()) {
+        roomMap = readWriteRoom.readRoom();
+        for (Map.Entry<Room, Integer> roomIntegerEntry : roomMap.entrySet()) {
             if (roomIntegerEntry.getValue() >= 5) {
                 System.out.println(roomIntegerEntry.getKey());
                 System.out.println("Number of times used is " + roomIntegerEntry.getValue());
             }
         }
-        Map<Villa, Integer> villaIntegerMap = readWriteVilla.readVilla();
-        for (Map.Entry<Villa, Integer> villaIntegerEntry : villaIntegerMap.entrySet()) {
+        villaMap = readWriteVilla.readVilla();
+        for (Map.Entry<Villa, Integer> villaIntegerEntry : villaMap.entrySet()) {
             if ((villaIntegerEntry.getValue() >= 5)) {
                 System.out.println(villaIntegerEntry.getKey());
                 System.out.println("Number of times used is " + villaIntegerEntry.getValue());
